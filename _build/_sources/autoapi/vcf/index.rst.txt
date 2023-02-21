@@ -1,0 +1,161 @@
+:py:mod:`vcf`
+=============
+
+.. py:module:: vcf
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   vcf.SNP
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   vcf.cap_allele
+   vcf.intersect_seqs_snps
+   vcf.intersect_snps_seqs
+   vcf.snp_seq1
+   vcf.snps_seq1
+   vcf.snps2_seq1
+   vcf.dna_length_1hot
+   vcf.vcf_count
+   vcf.vcf_snps
+   vcf.vcf_sort
+
+
+
+.. py:function:: cap_allele(allele, cap=5)
+
+   Cap the length of an allele in the figures 
+
+
+.. py:function:: intersect_seqs_snps(vcf_file, seqs, vision_p=1)
+
+   Intersect a VCF file with a list of sequence coordinates.
+
+   In
+    vcf_file:
+    seqs: list of objects w/ chrom, start, end
+    vision_p: proportion of sequences visible to center genes.
+
+   Out
+    seqs_snps: list of list mapping segment indexes to overlapping SNP indexes
+
+
+.. py:function:: intersect_snps_seqs(vcf_file, seq_coords, vision_p=1)
+
+   Intersect a VCF file with a list of sequence coordinates.
+
+   In
+    vcf_file:
+    seq_coords: list of sequence coordinates
+    vision_p: proportion of sequences visible to center genes.
+
+   Out
+    snp_segs: list of list mapping SNP indexes to overlapping sequence indexes
+
+
+.. py:function:: snp_seq1(snp, seq_len, genome_open)
+
+   Produce one hot coded sequences for a SNP.
+
+   Attrs:
+       snp [SNP] :
+       seq_len (int) : sequence length to code
+       genome_open (File) : open genome FASTA file
+
+   Return:
+       seq_vecs_list [array] : list of one hot coded sequences surrounding the
+       SNP
+
+
+.. py:function:: snps_seq1(snps, seq_len, genome_fasta, return_seqs=False)
+
+   Produce an array of one hot coded sequences for a list of SNPs.
+
+   Attrs:
+       snps [SNP] : list of SNPs
+       seq_len (int) : sequence length to code
+       genome_fasta (str) : genome FASTA file
+
+   Return:
+       seq_vecs (array) : one hot coded sequences surrounding the SNPs
+       seq_headers [str] : headers for sequences
+       seq_snps [SNP] : list of used SNPs
+
+
+.. py:function:: snps2_seq1(snps, seq_len, genome1_fasta, genome2_fasta, return_seqs=False)
+
+   Produce an array of one hot coded sequences for a list of SNPs.
+
+   Attrs:
+       snps [SNP] : list of SNPs
+       seq_len (int) : sequence length to code
+       genome_fasta (str) : major allele genome FASTA file
+       genome2_fasta (str) : minor allele genome FASTA file
+
+   Return:
+       seq_vecs (array) : one hot coded sequences surrounding the SNPs
+       seq_headers [str] : headers for sequences
+       seq_snps [SNP] : list of used SNPs
+
+
+.. py:function:: dna_length_1hot(seq, length)
+
+   Adjust the sequence length and compute
+   a 1hot coding. 
+
+
+.. py:function:: vcf_count(vcf_file)
+
+   Count SNPs in a VCF file 
+
+
+.. py:function:: vcf_snps(vcf_file, require_sorted=False, validate_ref_fasta=None, flip_ref=False, pos2=False, start_i=None, end_i=None)
+
+   Load SNPs from a VCF file 
+
+
+.. py:function:: vcf_sort(vcf_file)
+
+
+.. py:class:: SNP(vcf_line, pos2=False)
+
+   SNP
+
+   Represent SNPs read in from a VCF file
+
+   Attributes:
+       vcf_line (str)
+
+   .. py:method:: flip_alleles()
+
+      Flip reference and first alt allele.
+
+
+   .. py:method:: get_alleles()
+
+      Return a list of all alleles 
+
+
+   .. py:method:: longest_alt()
+
+      Return the longest alt allele. 
+
+
+   .. py:method:: __str__()
+
+      Return str(self).
+
+
+

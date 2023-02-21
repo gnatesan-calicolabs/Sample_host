@@ -1,0 +1,34 @@
+:py:mod:`h5_tfr`
+================
+
+.. py:module:: h5_tfr
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   h5_tfr.main
+   h5_tfr._float_feature
+   h5_tfr._bytes_feature
+   h5_tfr.writer_worker
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: _float_feature(value)
+
+
+.. py:function:: _bytes_feature(value)
+
+
+.. py:function:: writer_worker(tfr_file, tf_opts, h5_file, dataset, shard_i, num_shards)
+
+

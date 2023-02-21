@@ -1,0 +1,22 @@
+:py:mod:`sonnet_sat_bed`
+========================
+
+.. py:module:: sonnet_sat_bed
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   sonnet_sat_bed.main
+
+
+
+.. py:function:: main()
+
+

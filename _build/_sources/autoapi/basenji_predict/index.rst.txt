@@ -1,0 +1,43 @@
+:py:mod:`basenji_predict`
+=========================
+
+.. py:module:: basenji_predict
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_predict.main
+   basenji_predict.bigwig_open
+   basenji_predict.bigwig_write
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: bigwig_open(bw_file, genome_file)
+
+   Open the bigwig file for writing and write the header. 
+
+
+.. py:function:: bigwig_write(bw_file, signal_ti, track_bed, genome_file, buffer=0, bed_set=None)
+
+   Write a signal track to a BigWig file over the regions
+        specified by track_bed.
+
+   Args
+    bw_file:     BigWig filename
+    signal_ti:   Sequences X Length array for some target
+    track_bed:   BED file specifying sequence coordinates
+    genome_file: Chromosome lengths file
+    buffer:      Length skipped on each side of the region.
+    bed_set:     Filter BED file for train/valid/test
+
+

@@ -1,0 +1,30 @@
+:py:mod:`tfr_bw`
+================
+
+.. py:module:: tfr_bw
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   tfr_bw.main
+   tfr_bw.make_next_op
+   tfr_bw.parse_proto
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: make_next_op(tfr_pattern)
+
+
+.. py:function:: parse_proto(example_protos)
+
+

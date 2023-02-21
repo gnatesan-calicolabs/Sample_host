@@ -1,0 +1,22 @@
+:py:mod:`hdf5_bed`
+==================
+
+.. py:module:: hdf5_bed
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   hdf5_bed.main
+
+
+
+.. py:function:: main()
+
+

@@ -1,0 +1,78 @@
+:py:mod:`basenji_data_gene`
+===========================
+
+.. py:module:: basenji_data_gene
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_data_gene.main
+   basenji_data_gene.divide_genes_chr
+   basenji_data_gene.cluster_genes
+   basenji_data_gene.divide_genes_folds
+   basenji_data_gene.divide_genes_folds_bed
+   basenji_data_gene.divide_genes_pct
+   basenji_data_gene.genes_bed
+   basenji_data_gene.gff_df
+   basenji_data_gene.sufficient_sequence
+   basenji_data_gene.rc
+   basenji_data_gene._bytes_feature
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: divide_genes_chr(genes_df, test_chrs, valid_chrs)
+
+   Divide genes into train/valid/test lists by chromosome.
+
+
+.. py:function:: cluster_genes(genes_df, cluster_gene_distance)
+
+   Cluster genes within a specific distance into a graph.
+
+
+.. py:function:: divide_genes_folds(genes_df, folds, cluster_gene_distance)
+
+   Divide genes uniformly into folds.
+
+
+.. py:function:: divide_genes_folds_bed(genes_df, split_bed_file, cluster_gene_distance)
+
+   Divide genes into folds according to an existing split.
+
+
+.. py:function:: divide_genes_pct(genes_df, test_pct, valid_pct, cluster_gene_distance)
+
+   Divide genes into train/valid/test lists by percentage.
+
+
+.. py:function:: genes_bed(genes_df, bed_file)
+
+   Write BED file representing gene sequencs.
+
+
+.. py:function:: gff_df(gff_file, gene_index)
+
+   Read GFF w/ keys into DataFrame.
+
+
+.. py:function:: sufficient_sequence(fasta_file, genes_df, seq_length, n_allowed_pct)
+
+   Return boolean mask specifying genes with sufficient sequence.
+
+
+.. py:function:: rc(seq)
+
+
+.. py:function:: _bytes_feature(value)
+
+

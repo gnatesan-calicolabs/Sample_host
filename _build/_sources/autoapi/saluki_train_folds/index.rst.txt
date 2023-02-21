@@ -1,0 +1,30 @@
+:py:mod:`saluki_train_folds`
+============================
+
+.. py:module:: saluki_train_folds
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   saluki_train_folds.main
+   saluki_train_folds.make_rep_data
+   saluki_train_folds.options_string
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: make_rep_data(data_dir, rep_data_dir, fi, ci)
+
+
+.. py:function:: options_string(options, train_options, rep_dir)
+
+

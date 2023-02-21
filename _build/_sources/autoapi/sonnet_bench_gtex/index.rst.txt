@@ -1,0 +1,22 @@
+:py:mod:`sonnet_bench_gtex`
+===========================
+
+.. py:module:: sonnet_bench_gtex
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   sonnet_bench_gtex.main
+
+
+
+.. py:function:: main()
+
+

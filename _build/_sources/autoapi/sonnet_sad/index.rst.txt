@@ -1,0 +1,22 @@
+:py:mod:`sonnet_sad`
+====================
+
+.. py:module:: sonnet_sad
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   sonnet_sad.main
+
+
+
+.. py:function:: main()
+
+

@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>basenji_data2 &#8212; Init_website 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-basenji_data2">
+<span id="basenji-data2"></span><h1><a class="reference internal" href="#module-basenji_data2" title="basenji_data2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">basenji_data2</span></code></a><a class="headerlink" href="#module-basenji_data2" title="Permalink to this heading">¶</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.main" title="basenji_data2.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.quantify_leakage" title="basenji_data2.quantify_leakage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantify_leakage</span></code></a>(align_net_file, train_contigs, ...)</p></td>
+<td><p>Quanitfy the leakage across sequence sets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.break_large_contigs" title="basenji_data2.break_large_contigs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">break_large_contigs</span></code></a>(contigs, break_t[, verbose])</p></td>
+<td><p>Break large contigs in half until all contigs are under</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.contig_sequences" title="basenji_data2.contig_sequences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contig_sequences</span></code></a>(contigs, seq_length, stride[, snap, ...])</p></td>
+<td><p>Break up a list of Contig's into a list of model length</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.connect_contigs" title="basenji_data2.connect_contigs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_contigs</span></code></a>(contigs, align_net_file, net_fill_min, ...)</p></td>
+<td><p>Connect contigs across genomes by forming a graph that includes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.contig_stats_genome" title="basenji_data2.contig_stats_genome"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contig_stats_genome</span></code></a>(contigs)</p></td>
+<td><p>Compute contig statistics within each genome.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.divide_contig_components" title="basenji_data2.divide_contig_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">divide_contig_components</span></code></a>(contig_components, test_pct, ...)</p></td>
+<td><p>Divide contig connected components into train/valid/test,</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.intersect_contigs_nets" title="basenji_data2.intersect_contigs_nets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersect_contigs_nets</span></code></a>(graph_contigs_nets, genome_i, ...)</p></td>
+<td><p>Intersect the contigs and nets from genome_i, adding the</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.make_net_graph" title="basenji_data2.make_net_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_net_graph</span></code></a>(align_net_file, net_fill_min, out_dir)</p></td>
+<td><p>Construct a Graph with aligned net intervals connected</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.make_read_jobs" title="basenji_data2.make_read_jobs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_read_jobs</span></code></a>(seqs_bed_file, targets_df, gi, ...)</p></td>
+<td><p>Make basenji_data_read.py jobs for one genome.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.make_write_jobs" title="basenji_data2.make_write_jobs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_write_jobs</span></code></a>(mseqs, fasta_file, seqs_bed_file, ...)</p></td>
+<td><p>Make basenji_data_write.py jobs for one genome.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.rejoin_large_contigs" title="basenji_data2.rejoin_large_contigs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rejoin_large_contigs</span></code></a>(contigs)</p></td>
+<td><p>Rejoin large contigs that were broken up before alignment comparison.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.report_divide_stats" title="basenji_data2.report_divide_stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">report_divide_stats</span></code></a>(train_contigs, valid_contigs, ...)</p></td>
+<td><p>Report genome-specific statistics about the division of contigs</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.write_seqs_bed" title="basenji_data2.write_seqs_bed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_seqs_bed</span></code></a>(bed_file, seqs[, labels])</p></td>
+<td><p>Write sequences to BED file.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.Contig" title="basenji_data2.Contig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contig</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_data2.ModelSeq" title="basenji_data2.ModelSeq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelSeq</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_data2.GraphSeq" title="basenji_data2.GraphSeq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphSeq</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.main">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.quantify_leakage">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">quantify_leakage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">align_net_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.quantify_leakage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quanitfy the leakage across sequence sets.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.break_large_contigs">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">break_large_contigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">break_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.break_large_contigs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Break large contigs in half until all contigs are under
+the size threshold.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.contig_sequences">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">contig_sequences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.contig_sequences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Break up a list of Contig’s into a list of model length
+and stride sequence contigs.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.connect_contigs">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">connect_contigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_net_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_fill_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.connect_contigs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect contigs across genomes by forming a graph that includes
+net format aligning regions and contigs. Compute contig components
+as connected components of that graph.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.contig_stats_genome">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">contig_stats_genome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contigs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.contig_stats_genome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute contig statistics within each genome.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.divide_contig_components">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">divide_contig_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contig_components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_pct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_pct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_abstain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.divide_contig_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>Divide contig connected components into train/valid/test,
+and aiming for the specified nucleotide percentages.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.intersect_contigs_nets">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">intersect_contigs_nets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_contigs_nets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genome_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.intersect_contigs_nets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Intersect the contigs and nets from genome_i, adding the
+overlaps as edges to graph_contigs_nets.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.make_net_graph">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">make_net_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">align_net_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_fill_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.make_net_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a Graph with aligned net intervals connected
+by edges.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.make_read_jobs">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">make_read_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seqs_bed_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqs_cov_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.make_read_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make basenji_data_read.py jobs for one genome.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.make_write_jobs">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">make_write_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mseqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fasta_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqs_bed_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqs_cov_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tfr_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmap_npy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sum_targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.make_write_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make basenji_data_write.py jobs for one genome.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.rejoin_large_contigs">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">rejoin_large_contigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contigs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.rejoin_large_contigs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rejoin large contigs that were broken up before alignment comparison.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.report_divide_stats">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">report_divide_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_contigs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_contigs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.report_divide_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Report genome-specific statistics about the division of contigs
+between train/valid/test sets.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_data2.write_seqs_bed">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">write_seqs_bed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bed_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_data2.write_seqs_bed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write sequences to BED file.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="basenji_data2.Contig">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">Contig</span></span><a class="headerlink" href="#basenji_data2.Contig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="basenji_data2.ModelSeq">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">ModelSeq</span></span><a class="headerlink" href="#basenji_data2.ModelSeq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="basenji_data2.GraphSeq">
+<span class="sig-prename descclassname"><span class="pre">basenji_data2.</span></span><span class="sig-name descname"><span class="pre">GraphSeq</span></span><a class="headerlink" href="#basenji_data2.GraphSeq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Init_website</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Kelley, Gunalan Natesan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/autoapi/basenji_data2/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

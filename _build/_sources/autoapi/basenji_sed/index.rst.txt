@@ -1,0 +1,28 @@
+:py:mod:`basenji_sed`
+=====================
+
+.. py:module:: basenji_sed
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_sed.main
+   basenji_sed.alleles_1hot
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: alleles_1hot(gene_seq, seq_1hot, seq_snps)
+
+   One hot code for gene sequence alleles. 
+
+

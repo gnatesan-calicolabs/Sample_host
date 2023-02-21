@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>basenji_hdf5_single &#8212; Init_website 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-basenji_hdf5_single">
+<span id="basenji-hdf5-single"></span><h1><a class="reference internal" href="#module-basenji_hdf5_single" title="basenji_hdf5_single"><code class="xref py py-mod docutils literal notranslate"><span class="pre">basenji_hdf5_single</span></code></a><a class="headerlink" href="#module-basenji_hdf5_single" title="Permalink to this heading">¶</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_hdf5_single.main" title="basenji_hdf5_single.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_hdf5_single.annotate_na" title="basenji_hdf5_single.annotate_na"><code class="xref py py-obj docutils literal notranslate"><span class="pre">annotate_na</span></code></a>(seqs_segments, unmap_bed, seq_length, ...)</p></td>
+<td><p>Intersect the sequence segments with unmappable regions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_hdf5_single.batch_end" title="basenji_hdf5_single.batch_end"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_end</span></code></a>(segments, bstart, batch_max)</p></td>
+<td><p>Determine the batch end that will keep the</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_hdf5_single.bigwig_batch" title="basenji_hdf5_single.bigwig_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bigwig_batch</span></code></a>(wig_file, segments, seq_length[, ...])</p></td>
+<td><p>Read a batch of segment values from a bigwig file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_hdf5_single.limit_segments" title="basenji_hdf5_single.limit_segments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">limit_segments</span></code></a>(segments, filter_bed)</p></td>
+<td><p>Limit to segments overlapping the given BED.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_hdf5_single.filter_boring" title="basenji_hdf5_single.filter_boring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_boring</span></code></a>(targets[, var_t])</p></td>
+<td><p>Filter boring segments without signal variance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_hdf5_single.fourier_transform" title="basenji_hdf5_single.fourier_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fourier_transform</span></code></a>(targets, dim)</p></td>
+<td><p>Fourier transform.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_hdf5_single.latent_transform" title="basenji_hdf5_single.latent_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">latent_transform</span></code></a>(sess, model, job, targets_wig)</p></td>
+<td><p>Transform raw data to latent representation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_hdf5_single.segments_1hot" title="basenji_hdf5_single.segments_1hot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">segments_1hot</span></code></a>(fasta_file, segments, seq_length, stride)</p></td>
+<td><p>Read and 1-hot code sequences in their segment batches.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_hdf5_single.w5_batch" title="basenji_hdf5_single.w5_batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">w5_batch</span></code></a>(w5_file, segments, seq_length[, pool_width, ...])</p></td>
+<td><p>Read a batch of segment values from a bigwig file</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.main">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.annotate_na">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">annotate_na</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seqs_segments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unmap_bed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.annotate_na" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Intersect the sequence segments with unmappable regions</dt><dd><p>and annoate the segments as NaN to possible be ignored.</p>
+</dd>
+<dt>Args:</dt><dd><p>seqs_segments: list of (chrom,start,end) sequence segments
+unmap_bed: unmappable regions BED file
+seq_length: sequence length
+pool_width: pooled bin width</p>
+</dd>
+<dt>Returns:</dt><dd><p>seqs_na: NxL binary NA indicators</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.batch_end">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">batch_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bstart</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_max</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.batch_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the batch end that will keep the
+batch length under the given max.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.bigwig_batch">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">bigwig_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wig_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log10to2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cov_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.bigwig_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a batch of segment values from a bigwig file</p>
+<dl>
+<dt>Args:</dt><dd><p>wig_file: Bigwig filename
+segments: list of (chrom,start,end) genomic segments to read,</p>
+<blockquote>
+<div><p>assuming those segments are appropriate length</p>
+</div></blockquote>
+<p>seq_length: sequence length to break them into
+pool_width: average pool adjacent nucleotides of this width
+stride: advance the sequences by this amount.</p>
+</dd>
+<dt>Returns:</dt><dd><p>targets: target Bigwig value matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.limit_segments">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">limit_segments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_bed</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.limit_segments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit to segments overlapping the given BED.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>segments: list of (chrom,start,end) genomic segments
+filter_bed: BED file to filter by</p>
+</dd>
+<dt>Returns:</dt><dd><p>fsegments: list of (chrom,start,end) genomic segments</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.filter_boring">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">filter_boring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.filter_boring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter boring segments without signal variance.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>targets: SxLxT array of target values
+var_t: Average variance threshold</p>
+</dd>
+<dt>Returns:</dt><dd><p>targets_exciting: SxLxT array of target values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.fourier_transform">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">fourier_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.fourier_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fourier transform.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>targets: SxLxT array of target values
+dim: # of fourier dimensions</p>
+</dd>
+<dt>Returns:</dt><dd><p>fourier_real: transformed targets, real component
+fourier_imag: transformed targets, imaginary component</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.latent_transform">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">latent_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sess</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets_wig</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.latent_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform raw data to latent representation.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>sess: TensorFlow session
+model: TF or sklearn model
+job: dictionary of model hyper-parameters
+targets_wig: SxLxT array of target values</p>
+</dd>
+<dt>Returns:</dt><dd><p>targets_latent: SxDxT array of target values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.segments_1hot">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">segments_1hot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fasta_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.segments_1hot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read and 1-hot code sequences in their segment batches.</p>
+<dl class="simple">
+<dt>Args</dt><dd><p>fasta_file: FASTA genome
+segments: list of (chrom,start,end) genomic segments to read
+seq_length: sequence length to break them into</p>
+</dd>
+<dt>Returns:</dt><dd><p>seqs_1hot: You know.
+seqs_segments: list of (chrom,start,end) sequence segments</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_hdf5_single.w5_batch">
+<span class="sig-prename descclassname"><span class="pre">basenji_hdf5_single.</span></span><span class="sig-name descname"><span class="pre">w5_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w5_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log10to2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cov_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_hdf5_single.w5_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a batch of segment values from a bigwig file</p>
+<dl>
+<dt>Args:</dt><dd><p>w5_file: wiggle HDF5 filename
+segments: list of (chrom,start,end) genomic segments to read,</p>
+<blockquote>
+<div><p>assuming those segments are appropriate length</p>
+</div></blockquote>
+<p>seq_length: sequence length to break them into
+pool_width: average pool adjacent nucleotides of this width
+stride: advance the sequences by this amount.</p>
+</dd>
+<dt>Returns:</dt><dd><p>targets: target Bigwig value matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Init_website</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Kelley, Gunalan Natesan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/autoapi/basenji_hdf5_single/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,26 @@
+:py:mod:`saluki_bench_gtex`
+===========================
+
+.. py:module:: saluki_bench_gtex
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   saluki_bench_gtex.main
+   saluki_bench_gtex.ensemble_ssd
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: ensemble_ssd(out_dir, tissue, posneg, num_folds, num_crosses)
+
+

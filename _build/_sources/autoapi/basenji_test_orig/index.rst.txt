@@ -1,0 +1,55 @@
+:py:mod:`basenji_test_orig`
+===========================
+
+.. py:module:: basenji_test_orig
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_test_orig.main
+   basenji_test_orig.ben_hoch
+   basenji_test_orig.bigwig_open
+   basenji_test_orig.bigwig_write
+   basenji_test_orig.compute_full_accuracy
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: ben_hoch(p_values)
+
+   Convert the given p-values to q-values using Benjamini-Hochberg FDR. 
+
+
+.. py:function:: bigwig_open(bw_file, genome_file)
+
+   Open the bigwig file for writing and write the header. 
+
+
+.. py:function:: bigwig_write(bw_file, signal_ti, track_bed, genome_file, buffer=0, bed_set='test')
+
+   Write a signal track to a BigWig file over the regions
+        specified by track_bed.
+
+   Args
+    bw_file:     BigWig filename
+    signal_ti:   Sequences X Length array for some target
+    track_bed:   BED file specifying sequence coordinates
+    genome_file: Chromosome lengths file
+    buffer:      Length skipped on each side of the region.
+
+
+.. py:function:: compute_full_accuracy(dr, model, test_preds, test_targets_full, out_dir, down_sample)
+
+   Compute accuracy on the saved full target set, as opposed to a
+   reconstructed version via dim reduction and/or fourier. 
+
+

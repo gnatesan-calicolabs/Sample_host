@@ -1,0 +1,34 @@
+:py:mod:`basenji_cmp`
+=====================
+
+.. py:module:: basenji_cmp
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_cmp.main
+   basenji_cmp.plot_curve
+   basenji_cmp.read_training
+   basenji_cmp.epoch_stats
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: plot_curve(cmp_dfs, stat, out_dir)
+
+
+.. py:function:: read_training(train_file)
+
+
+.. py:function:: epoch_stats(epoch_line)
+
+

@@ -1,0 +1,22 @@
+:py:mod:`basenji_map_seqs`
+==========================
+
+.. py:module:: basenji_map_seqs
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_map_seqs.main
+
+
+
+.. py:function:: main()
+
+

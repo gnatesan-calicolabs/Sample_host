@@ -1,0 +1,38 @@
+:py:mod:`tfr_qc`
+================
+
+.. py:module:: tfr_qc
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   tfr_qc.main
+   tfr_qc.plot_distr
+   tfr_qc.read_tfr
+   tfr_qc.file_to_records
+   tfr_qc.parse_proto
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: plot_distr(targets_ti, out_pdf)
+
+
+.. py:function:: read_tfr(tfr_pattern, target_len)
+
+
+.. py:function:: file_to_records(filename)
+
+
+.. py:function:: parse_proto(example_protos)
+
+

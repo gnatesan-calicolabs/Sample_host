@@ -1,0 +1,22 @@
+:py:mod:`basenji_fetch_norm`
+============================
+
+.. py:module:: basenji_fetch_norm
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_fetch_norm.main
+
+
+
+.. py:function:: main()
+
+

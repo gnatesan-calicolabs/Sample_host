@@ -1,0 +1,22 @@
+:py:mod:`basenji_variables`
+===========================
+
+.. py:module:: basenji_variables
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_variables.main
+
+
+
+.. py:function:: main()
+
+

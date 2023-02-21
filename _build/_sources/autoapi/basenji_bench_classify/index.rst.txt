@@ -1,0 +1,58 @@
+:py:mod:`basenji_bench_classify`
+================================
+
+.. py:module:: basenji_bench_classify
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_bench_classify.main
+   basenji_bench_classify.fold_roc
+   basenji_bench_classify.plot_roc
+   basenji_bench_classify.randfor_full
+   basenji_bench_classify.randfor_roc
+   basenji_bench_classify.ridge_roc
+   basenji_bench_classify.read_indel
+   basenji_bench_classify.read_sad
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: fold_roc(X, y, folds=8, random_state=44)
+
+   Compute ROC for a single value, sans model.
+
+
+.. py:function:: plot_roc(fprs, tprs, out_dir)
+
+
+.. py:function:: randfor_full(X, y, min_samples_leaf=1, random_state=None, n_jobs=1)
+
+   Compute a single random forest on the full data.
+
+
+.. py:function:: randfor_roc(X, y, folds=8, iterations=1, n_estimators=100, min_samples_leaf=1, random_state=None, n_jobs=1)
+
+   Compute ROC using a random forest.
+
+
+.. py:function:: ridge_roc(X, y, folds=8, iterations=1, alpha=1, random_state=None)
+
+   Compute ROC using a random forest.
+
+
+.. py:function:: read_indel(sad_file, indel_abs=True, indel_bool=False)
+
+
+.. py:function:: read_sad(sad_file, sad_stat)
+
+

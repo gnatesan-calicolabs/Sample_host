@@ -1,0 +1,34 @@
+:py:mod:`basenji_bench_phylopvcf_folds`
+=======================================
+
+.. py:module:: basenji_bench_phylopvcf_folds
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_bench_phylopvcf_folds.main
+   basenji_bench_phylopvcf_folds.ensemble_scores_h5
+   basenji_bench_phylopvcf_folds.options_string
+   basenji_bench_phylopvcf_folds.read_metrics
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: ensemble_scores_h5(ensemble_dir, scores_files)
+
+
+.. py:function:: options_string(options, group_options, rep_dir)
+
+
+.. py:function:: read_metrics(sad_dirs)
+
+

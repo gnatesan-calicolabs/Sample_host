@@ -1,0 +1,22 @@
+:py:mod:`basenji_train`
+=======================
+
+.. py:module:: basenji_train
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train.main
+
+
+
+.. py:function:: main()
+
+

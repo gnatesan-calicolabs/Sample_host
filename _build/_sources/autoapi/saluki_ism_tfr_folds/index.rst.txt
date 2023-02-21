@@ -1,0 +1,34 @@
+:py:mod:`saluki_ism_tfr_folds`
+==============================
+
+.. py:module:: saluki_ism_tfr_folds
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   saluki_ism_tfr_folds.main
+   saluki_ism_tfr_folds.ensemble_scores
+   saluki_ism_tfr_folds.options_string
+   saluki_ism_tfr_folds.valid_h5
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: ensemble_scores(scores_files, ensemble_file)
+
+
+.. py:function:: options_string(options, ism_options, out_dir)
+
+
+.. py:function:: valid_h5(h5_file)
+
+

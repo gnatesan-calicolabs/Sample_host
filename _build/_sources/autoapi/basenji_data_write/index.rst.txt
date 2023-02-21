@@ -1,0 +1,54 @@
+:py:mod:`basenji_data_write`
+============================
+
+.. py:module:: basenji_data_write
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_data_write.main
+   basenji_data_write.tround
+   basenji_data_write.rround
+   basenji_data_write.fetch_dna
+   basenji_data_write.feature_bytes
+   basenji_data_write.feature_floats
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: tround(a, decimals)
+
+   Truncate to the specified number of decimals. 
+
+
+.. py:function:: rround(a, decimals)
+
+   Round to the specified number of decimals, randomly sampling
+   the last digit according to a bernoulli RV. 
+
+
+.. py:function:: fetch_dna(fasta_open, chrm, start, end)
+
+   Fetch DNA when start/end may reach beyond chromosomes.
+
+
+.. py:function:: feature_bytes(values)
+
+   Convert numpy arrays to bytes features.
+
+
+.. py:function:: feature_floats(values)
+
+   Convert numpy arrays to floats features.
+   Requires more space than bytes for float16
+
+

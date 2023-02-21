@@ -1,0 +1,130 @@
+:py:mod:`basenji_data2`
+=======================
+
+.. py:module:: basenji_data2
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_data2.main
+   basenji_data2.quantify_leakage
+   basenji_data2.break_large_contigs
+   basenji_data2.contig_sequences
+   basenji_data2.connect_contigs
+   basenji_data2.contig_stats_genome
+   basenji_data2.divide_contig_components
+   basenji_data2.intersect_contigs_nets
+   basenji_data2.make_net_graph
+   basenji_data2.make_read_jobs
+   basenji_data2.make_write_jobs
+   basenji_data2.rejoin_large_contigs
+   basenji_data2.report_divide_stats
+   basenji_data2.write_seqs_bed
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_data2.Contig
+   basenji_data2.ModelSeq
+   basenji_data2.GraphSeq
+
+
+.. py:function:: main()
+
+
+.. py:function:: quantify_leakage(align_net_file, train_contigs, valid_contigs, test_contigs, out_dir)
+
+   Quanitfy the leakage across sequence sets.
+
+
+.. py:function:: break_large_contigs(contigs, break_t, verbose=False)
+
+   Break large contigs in half until all contigs are under
+   the size threshold.
+
+
+.. py:function:: contig_sequences(contigs, seq_length, stride, snap=None, label=None)
+
+   Break up a list of Contig's into a list of model length
+   and stride sequence contigs.
+
+
+.. py:function:: connect_contigs(contigs, align_net_file, net_fill_min, out_dir)
+
+   Connect contigs across genomes by forming a graph that includes
+   net format aligning regions and contigs. Compute contig components
+   as connected components of that graph.
+
+
+.. py:function:: contig_stats_genome(contigs)
+
+   Compute contig statistics within each genome.
+
+
+.. py:function:: divide_contig_components(contig_components, test_pct, valid_pct, pct_abstain=0.5)
+
+   Divide contig connected components into train/valid/test,
+   and aiming for the specified nucleotide percentages.
+
+
+.. py:function:: intersect_contigs_nets(graph_contigs_nets, genome_i, out_dir)
+
+   Intersect the contigs and nets from genome_i, adding the
+   overlaps as edges to graph_contigs_nets.
+
+
+.. py:function:: make_net_graph(align_net_file, net_fill_min, out_dir)
+
+   Construct a Graph with aligned net intervals connected
+   by edges.
+
+
+.. py:function:: make_read_jobs(seqs_bed_file, targets_df, gi, seqs_cov_dir, options)
+
+   Make basenji_data_read.py jobs for one genome.
+
+
+.. py:function:: make_write_jobs(mseqs, fasta_file, seqs_bed_file, seqs_cov_dir, tfr_dir, gi, unmap_npy, targets_start, sum_targets, options)
+
+   Make basenji_data_write.py jobs for one genome.
+
+
+.. py:function:: rejoin_large_contigs(contigs)
+
+   Rejoin large contigs that were broken up before alignment comparison.
+
+
+.. py:function:: report_divide_stats(train_contigs, valid_contigs, test_contigs)
+
+   Report genome-specific statistics about the division of contigs
+   between train/valid/test sets.
+
+
+.. py:function:: write_seqs_bed(bed_file, seqs, labels=False)
+
+   Write sequences to BED file.
+
+
+.. py:data:: Contig
+
+   
+
+.. py:data:: ModelSeq
+
+   
+
+.. py:data:: GraphSeq
+
+   
+

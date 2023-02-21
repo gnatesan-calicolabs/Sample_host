@@ -1,0 +1,32 @@
+:py:mod:`sonnet_satg_bed`
+=========================
+
+.. py:module:: sonnet_satg_bed
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   sonnet_satg_bed.main
+   sonnet_satg_bed.input_gradients
+   sonnet_satg_bed.unaugment_grads
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: input_gradients(seqnn_model, seq_1hot_tf, targets_mask, pos_start, pos_end, species)
+
+
+.. py:function:: unaugment_grads(grads, fwdrc=False, shift=0)
+
+   Undo sequence augmentation.
+
+

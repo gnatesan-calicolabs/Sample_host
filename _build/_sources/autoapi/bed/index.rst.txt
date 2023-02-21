@@ -1,0 +1,44 @@
+:py:mod:`bed`
+=============
+
+.. py:module:: bed
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   bed.make_bed_seqs
+   bed.read_bed_coords
+   bed.write_bedgraph
+   bed.write_bedgraph_v1
+
+
+
+.. py:function:: make_bed_seqs(bed_file, fasta_file, seq_len, stranded=False)
+
+   Return BED regions as sequences and regions as a list of coordinate
+   tuples, extended to a specified length.
+
+
+.. py:function:: read_bed_coords(bed_file, seq_len)
+
+   Return BED regions as a list of coordinate
+   tuples, extended to a specified length.
+
+
+.. py:function:: write_bedgraph(test_preds, test_targets, data_dir, out_dir, split_label, bedgraph_indexes=None)
+
+   Write BED graph files for predictions and targets.
+
+
+.. py:function:: write_bedgraph_v1(test_preds, test_targets, data_dir, out_dir, split_label, bedgraph_indexes=None)
+
+   Write BED graph files for predictions and targets.
+
+

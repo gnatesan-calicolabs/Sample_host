@@ -1,0 +1,28 @@
+:py:mod:`basenji_bench_phylop`
+==============================
+
+.. py:module:: basenji_bench_phylop
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_bench_phylop.main
+   basenji_bench_phylop.randfor_cv
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: randfor_cv(Xs, ys, folds=8, iterations=1, n_estimators=50, max_features='log2', random_state=44, n_jobs=8)
+
+   Compute random forest regression accuracy statistics, shuffling at the sequence level.
+
+

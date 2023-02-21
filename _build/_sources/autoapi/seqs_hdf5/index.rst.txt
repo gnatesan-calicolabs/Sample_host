@@ -1,0 +1,22 @@
+:py:mod:`seqs_hdf5`
+===================
+
+.. py:module:: seqs_hdf5
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   seqs_hdf5.main
+
+
+
+.. py:function:: main()
+
+

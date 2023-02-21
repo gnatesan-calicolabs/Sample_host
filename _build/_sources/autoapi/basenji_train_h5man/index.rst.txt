@@ -1,0 +1,38 @@
+:py:mod:`basenji_train_h5man`
+=============================
+
+.. py:module:: basenji_train_h5man
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train_h5man.main
+   basenji_train_h5man.run
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train_h5man.FLAGS
+
+
+.. py:data:: FLAGS
+
+   
+
+.. py:function:: main(_)
+
+
+.. py:function:: run(params_file, data_file, train_epochs, train_epoch_batches, test_epoch_batches)
+
+

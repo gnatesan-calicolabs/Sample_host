@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>blocks &#8212; Init_website 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-blocks">
+<span id="blocks"></span><h1><a class="reference internal" href="#module-blocks" title="blocks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">blocks</span></code></a><a class="headerlink" href="#module-blocks" title="Permalink to this heading">¶</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.conv_block" title="blocks.conv_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_block</span></code></a>(inputs[, filters, kernel_size, activation, ...])</p></td>
+<td><p>Construct a single convolution block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.conv_dna" title="blocks.conv_dna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_dna</span></code></a>(inputs[, filters, kernel_size, activation, ...])</p></td>
+<td><p>Construct a single convolution block, assumed to be operating on DNA.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.conv_nac" title="blocks.conv_nac"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_nac</span></code></a>(inputs[, filters, kernel_size, activation, ...])</p></td>
+<td><p>Construct a single convolution block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.conv_next" title="blocks.conv_next"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_next</span></code></a>(inputs[, filters, kernel_size, activation, ...])</p></td>
+<td><p>Construct a single convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.fpn_unet" title="blocks.fpn_unet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fpn_unet</span></code></a>(inputs, unet_repr[, activation, stride, ...])</p></td>
+<td><p>Construct a feature pyramid network block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.fpn1_unet" title="blocks.fpn1_unet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fpn1_unet</span></code></a>(inputs, unet_repr[, activation, stride, ...])</p></td>
+<td><p>Construct a feature pyramid network block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.upsample_unet" title="blocks.upsample_unet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upsample_unet</span></code></a>(inputs, unet_repr[, activation, stride, ...])</p></td>
+<td><p>Construct a single transposed convolution block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.tconv_nac" title="blocks.tconv_nac"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tconv_nac</span></code></a>(inputs[, filters, kernel_size, activation, ...])</p></td>
+<td><p>Construct a single transposed convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.concat_unet" title="blocks.concat_unet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat_unet</span></code></a>(inputs, unet_repr, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.conv_block_2d" title="blocks.conv_block_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_block_2d</span></code></a>(inputs[, filters, activation, ...])</p></td>
+<td><p>Construct a single 2D convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.conv_tower_v1" title="blocks.conv_tower_v1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_tower_v1</span></code></a>(inputs, filters_init[, filters_mult, repeat])</p></td>
+<td><p>Construct a reducing convolution block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.conv_tower" title="blocks.conv_tower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_tower</span></code></a>(inputs, filters_init[, filters_end, ...])</p></td>
+<td><p>Construct a reducing convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.conv_tower_nac" title="blocks.conv_tower_nac"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv_tower_nac</span></code></a>(inputs, filters_init[, filters_end, ...])</p></td>
+<td><p>Construct a reducing convolution block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.res_tower" title="blocks.res_tower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">res_tower</span></code></a>(inputs, filters_init[, filters_end, ...])</p></td>
+<td><p>Construct a reducing convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.convnext_tower" title="blocks.convnext_tower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convnext_tower</span></code></a>(inputs, filters_init[, filters_end, ...])</p></td>
+<td><p>Abc.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.transformer" title="blocks.transformer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transformer</span></code></a>(inputs[, key_size, heads, out_size, ...])</p></td>
+<td><p>Construct a transformer block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.transformer_split" title="blocks.transformer_split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transformer_split</span></code></a>(inputs[, splits, key_size, heads, ...])</p></td>
+<td><p>Construct a transformer block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.transformer_dense" title="blocks.transformer_dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transformer_dense</span></code></a>(inputs, out_size, dense_expansion, ...)</p></td>
+<td><p>Transformer block dense portion.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.transformer2" title="blocks.transformer2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transformer2</span></code></a>(inputs[, key_size, heads, out_size, ...])</p></td>
+<td><p>Construct a transformer block, with length-wise pooling before</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.swin_transformer" title="blocks.swin_transformer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swin_transformer</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.transformer_tower" title="blocks.transformer_tower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transformer_tower</span></code></a>(inputs[, repeat, block_type])</p></td>
+<td><p>Construct a tower of repeated transformer blocks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.squeeze_excite" title="blocks.squeeze_excite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squeeze_excite</span></code></a>(inputs[, activation, bottleneck_ratio, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.wheeze_excite" title="blocks.wheeze_excite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wheeze_excite</span></code></a>(inputs, pool_size, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.global_context" title="blocks.global_context"><code class="xref py py-obj docutils literal notranslate"><span class="pre">global_context</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.dilated_dense" title="blocks.dilated_dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilated_dense</span></code></a>(inputs, filters[, kernel_size, ...])</p></td>
+<td><p>Construct a residual dilated dense block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.dilated_residual" title="blocks.dilated_residual"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilated_residual</span></code></a>(inputs, filters[, kernel_size, ...])</p></td>
+<td><p>Construct a residual dilated convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.dilated_residual_nac" title="blocks.dilated_residual_nac"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilated_residual_nac</span></code></a>(inputs, filters[, kernel_size, ...])</p></td>
+<td><p>Construct a residual dilated convolution block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.dilated_residual_2d" title="blocks.dilated_residual_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilated_residual_2d</span></code></a>(inputs, filters[, kernel_size, ...])</p></td>
+<td><p>Construct a residual dilated convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.exp" title="blocks.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a>(inputs[, base, minus])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.center_average" title="blocks.center_average"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center_average</span></code></a>(inputs, center, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.center_slice" title="blocks.center_slice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center_slice</span></code></a>(inputs, center, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.concat_dist_2d" title="blocks.concat_dist_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat_dist_2d</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.concat_position" title="blocks.concat_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat_position</span></code></a>(inputs[, transform, power])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.cropping_2d" title="blocks.cropping_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cropping_2d</span></code></a>(inputs, cropping, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.one_to_two" title="blocks.one_to_two"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_to_two</span></code></a>(inputs[, operation])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.symmetrize_2d" title="blocks.symmetrize_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">symmetrize_2d</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.upper_tri" title="blocks.upper_tri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upper_tri</span></code></a>(inputs[, diagonal_offset])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.factor_inverse" title="blocks.factor_inverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factor_inverse</span></code></a>(inputs, components_file, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.dense_block" title="blocks.dense_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dense_block</span></code></a>(inputs[, units, activation, ...])</p></td>
+<td><p>Construct a single convolution block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.dense_nac" title="blocks.dense_nac"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dense_nac</span></code></a>(inputs[, units, activation, flatten, ...])</p></td>
+<td><p>Construct a single convolution block.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.final" title="blocks.final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">final</span></code></a>(inputs, units[, activation, flatten, ...])</p></td>
+<td><p>Final simple transformation before comparison to targets.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.dense" title="blocks.dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dense</span></code></a>(inputs, units[, activation, kernel_initializer, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.average_pooling" title="blocks.average_pooling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">average_pooling</span></code></a>(inputs[, pool_size])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.average_to_2d" title="blocks.average_to_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">average_to_2d</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.max_to_2d" title="blocks.max_to_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_to_2d</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.dot_to_2d" title="blocks.dot_to_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot_to_2d</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.geodot_to_2d" title="blocks.geodot_to_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geodot_to_2d</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.concat_to_2d" title="blocks.concat_to_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat_to_2d</span></code></a>(inputs, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#blocks.name_func" title="blocks.name_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name_func</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#blocks.keras_func" title="blocks.keras_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keras_func</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_block">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'same'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters:       Conv1D filters
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+stride:        Conv1D stride
+dilation_rate: Conv1D dilation rate
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+conv_type:     Conv1D layer type
+residual:      Residual connection boolean
+pool_size:     Max pool width
+norm_type:     Apply batch or layer normalization
+bn_momentum:   BatchNorm momentum
+norm_gamma:    BatchNorm gamma (defaults according to residual)</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_dna">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_dna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">se</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'same'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_dna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single convolution block, assumed to be operating on DNA.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters:       Conv1D filters
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+stride:        Conv1D stride
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+conv_type:     Conv1D layer type
+pool_size:     Max pool width
+norm_type:     Apply batch or layer normalization
+bn_momentum:   BatchNorm momentum</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_nac">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_nac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'same'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">se</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_nac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters:       Conv1D filters
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+stride:        Conv1D stride
+dilation_rate: Conv1D dilation rate
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+conv_type:     Conv1D layer type
+residual:      Residual connection boolean
+pool_size:     Max pool width
+norm_type:     Apply batch or layer normalization
+bn_momentum:   BatchNorm momentum</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_next">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_expansion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'same'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters:       Conv1D filters
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+dilation_rate: Conv1D dilation rate
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+residual:      Residual connection boolean
+pool_size:     Max pool width
+bn_momentum:   BatchNorm momentum</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.fpn_unet">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">fpn_unet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unet_repr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.fpn_unet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a feature pyramid network block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+stride:        UpSample stride
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+norm_type:     Apply batch or layer normalization
+bn_momentum:   BatchNorm momentum</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.fpn1_unet">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">fpn1_unet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unet_repr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.fpn1_unet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a feature pyramid network block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+stride:        UpSample stride
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+norm_type:     Apply batch or layer normalization
+bn_momentum:   BatchNorm momentum</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.upsample_unet">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">upsample_unet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unet_repr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.upsample_unet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single transposed convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters:       Conv1D filters
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+stride:        UpSample stride
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+conv_type:     Conv1D layer type
+norm_type:     Apply batch or layer normalization
+bn_momentum:   BatchNorm momentum</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, stride*seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.tconv_nac">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">tconv_nac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'same'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.tconv_nac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single transposed convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters:       Conv1D filters
+kernel_size:   Conv1D kernel_size
+activation:    relu/gelu/etc
+stride:        UpSample stride
+l2_scale:      L2 regularization weight.
+dropout:       Dropout rate probability
+conv_type:     Conv1D layer type
+norm_type:     Apply batch or layer normalization
+bn_momentum:   BatchNorm momentum</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, stride*seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.concat_unet">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">concat_unet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unet_repr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.concat_unet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_block_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_block_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ones'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_block_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single 2D convolution block.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_tower_v1">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_tower_v1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_tower_v1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a reducing convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters_init:  Initial Conv1D filters
+filters_mult:  Multiplier for Conv1D filters
+repeat:        Conv block repetitions</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_tower">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_tower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divisible_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reprs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_tower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a reducing convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters_init:  Initial Conv1D filters
+filters_end:   End Conv1D filters
+filters_mult:  Multiplier for Conv1D filters
+divisible_by:  Round filters to be divisible by (eg a power of two)
+repeat:        Tower repetitions</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.conv_tower_nac">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">conv_tower_nac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divisible_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reprs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.conv_tower_nac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a reducing convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters_init:  Initial Conv1D filters
+filters_end:   End Conv1D filters
+filters_mult:  Multiplier for Conv1D filters
+divisible_by:  Round filters to be divisible by (eg a power of two)
+repeat:        Tower repetitions
+reprs:         Append representations.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.res_tower">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">res_tower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divisible_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_convs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reprs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.res_tower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a reducing convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters_init:  Initial Conv1D filters
+filters_end:   End Conv1D filters
+filters_mult:  Multiplier for Conv1D filters
+kernel_size:   Conv1D kernel_size
+dropout:       Dropout on subsequent convolution blocks.
+pool_size:     Pool width.
+repeat:        Residual block repetitions
+num_convs:     Conv blocks per residual layer</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.convnext_tower">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">convnext_tower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'max'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divisible_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_convs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reprs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.convnext_tower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abc.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+filters_init:  Initial Conv1D filters
+filters_end:   End Conv1D filters
+filters_mult:  Multiplier for Conv1D filters
+kernel_size:   Conv1D kernel_size
+dropout:       Dropout on subsequent convolution blocks.
+pool_size:     Pool width.
+repeat:        Residual block repetitions
+num_convs:     Conv blocks per residual layer</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.transformer">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_expansion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_position_bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attention_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mha_l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_position_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qkv_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mha_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.transformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a transformer block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+key_size:        Conv block repetitions</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.transformer_split">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">transformer_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">splits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_expansion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_position_bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attention_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mha_l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_position_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qkv_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mha_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.transformer_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a transformer block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+key_size:        Conv block repetitions</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.transformer_dense">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">transformer_dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_expansion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.transformer_dense" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transformer block dense portion.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.transformer2">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">transformer2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_position_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attention_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_expansion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qkv_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.transformer2" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Construct a transformer block, with length-wise pooling before</dt><dd><p>returning to full length.</p>
+</dd>
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+key_size:        Conv block repetitions</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.swin_transformer">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">swin_transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.swin_transformer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.transformer_tower">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">transformer_tower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'transformer'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.transformer_tower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a tower of repeated transformer blocks.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:        [batch_size, seq_length, features] input sequence
+repeat:        Conv block repetitions</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length, features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.squeeze_excite">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">squeeze_excite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottleneck_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.squeeze_excite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.wheeze_excite">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">wheeze_excite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.wheeze_excite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.global_context">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">global_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.global_context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dilated_dense">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dilated_dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dilated_dense" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a residual dilated dense block.</p>
+<p>Args:</p>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dilated_residual">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dilated_residual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">round</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dilated_residual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a residual dilated convolution block.</p>
+<p>Args:</p>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dilated_residual_nac">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dilated_residual_nac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dilated_residual_nac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a residual dilated convolution block.</p>
+<p>Args:</p>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dilated_residual_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dilated_residual_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate_mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dilated_residual_2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a residual dilated convolution block.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.exp">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.exp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.center_average">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">center_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.center_average" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.center_slice">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">center_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.center_slice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.concat_dist_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">concat_dist_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.concat_dist_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.concat_position">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">concat_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'abs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.concat_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.cropping_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">cropping_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cropping</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.cropping_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.one_to_two">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">one_to_two</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.one_to_two" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.symmetrize_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">symmetrize_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.symmetrize_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.upper_tri">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">upper_tri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diagonal_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.upper_tri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.factor_inverse">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">factor_inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components_file</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.factor_inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dense_block">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dense_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dense_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:         [batch_size, seq_length, features] input sequence
+units:          Conv1D filters
+activation:     relu/gelu/etc
+activation_end: Compute activation after the other operations
+flatten:        Flatten across positional axis
+dropout:        Dropout rate probability
+l2_scale:       L2 regularization weight.
+l1_scale:       L1 regularization weight.
+residual:       Residual connection boolean
+batch_norm:     Apply batch normalization
+bn_momentum:    BatchNorm momentum
+norm_gamma:       BatchNorm gamma (defaults according to residual)</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length(?), features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dense_nac">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dense_nac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dense_nac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a single convolution block.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:         [batch_size, seq_length, features] input sequence
+units:          Conv1D filters
+activation:     relu/gelu/etc
+activation_end: Compute activation after the other operations
+flatten:        Flatten across positional axis
+dropout:        Dropout rate probability
+l2_scale:       L2 regularization weight.
+l1_scale:       L1 regularization weight.
+residual:       Residual connection boolean
+batch_norm:     Apply batch normalization
+bn_momentum:    BatchNorm momentum
+norm_gamma:       BatchNorm gamma (defaults according to residual)</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length(?), features] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.final">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.final" title="Permalink to this definition">¶</a></dt>
+<dd><p>Final simple transformation before comparison to targets.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs:         [batch_size, seq_length, features] input sequence
+units:          Dense units
+activation:     relu/gelu/etc
+flatten:        Flatten positional axis.
+l2_scale:       L2 regularization weight.
+l1_scale:       L1 regularization weight.</p>
+</dd>
+<dt>Returns:</dt><dd><p>[batch_size, seq_length(?), units] output sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dense">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dense" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.average_pooling">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">average_pooling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.average_pooling" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.average_to_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">average_to_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.average_to_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.max_to_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">max_to_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.max_to_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.dot_to_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">dot_to_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.dot_to_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.geodot_to_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">geodot_to_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.geodot_to_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blocks.concat_to_2d">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">concat_to_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blocks.concat_to_2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="blocks.name_func">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">name_func</span></span><a class="headerlink" href="#blocks.name_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="blocks.keras_func">
+<span class="sig-prename descclassname"><span class="pre">blocks.</span></span><span class="sig-name descname"><span class="pre">keras_func</span></span><a class="headerlink" href="#blocks.keras_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Init_website</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Kelley, Gunalan Natesan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/autoapi/blocks/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

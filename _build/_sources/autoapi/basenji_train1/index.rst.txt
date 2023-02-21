@@ -1,0 +1,74 @@
+:py:mod:`basenji_train1`
+========================
+
+.. py:module:: basenji_train1
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train1.AccuracyWorker
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train1.main
+   basenji_train1.run
+   basenji_train1.accuracy_update
+   basenji_train1.make_data_ops
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train1.FLAGS
+
+
+.. py:data:: FLAGS
+
+   
+
+.. py:function:: main(_)
+
+
+.. py:function:: run(params_file, train_file, test_file, train_epochs, train_epoch_batches, test_epoch_batches)
+
+
+.. py:function:: accuracy_update(epoch, steps, train_loss, valid_acc, time_str, best_str)
+
+   Compute and write accuracy update.
+
+
+.. py:function:: make_data_ops(job, train_file, test_file)
+
+
+.. py:class:: AccuracyWorker(acc_queue)
+
+   Bases: :py:obj:`threading.Thread`
+
+   Compute accuracy statistics and print update line.
+
+   .. py:method:: run()
+
+      Method representing the thread's activity.
+
+      You may override this method in a subclass. The standard run() method
+      invokes the callable object passed to the object's constructor as the
+      target argument, if any, with sequential and keyword arguments taken
+      from the args and kwargs arguments, respectively.
+
+
+
+

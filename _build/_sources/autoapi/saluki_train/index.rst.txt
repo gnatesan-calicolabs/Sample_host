@@ -1,0 +1,22 @@
+:py:mod:`saluki_train`
+======================
+
+.. py:module:: saluki_train
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   saluki_train.main
+
+
+
+.. py:function:: main()
+
+

@@ -1,0 +1,22 @@
+:py:mod:`basenji_average`
+=========================
+
+.. py:module:: basenji_average
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_average.main
+
+
+
+.. py:function:: main()
+
+

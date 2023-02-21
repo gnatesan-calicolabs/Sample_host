@@ -1,0 +1,33 @@
+:py:mod:`borzoi_satg_gene_multi`
+================================
+
+.. py:module:: borzoi_satg_gene_multi
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   borzoi_satg_gene_multi.main
+   borzoi_satg_gene_multi.collect_h5
+   borzoi_satg_gene_multi.job_completed
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: collect_h5(out_dir, num_procs, sad_stat)
+
+
+.. py:function:: job_completed(options, pi)
+
+   Check whether a specific job has generated its
+   output file.
+
+

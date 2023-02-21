@@ -1,0 +1,85 @@
+:py:mod:`basenji_test_genes`
+============================
+
+.. py:module:: basenji_test_genes
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_test_genes.main
+   basenji_test_genes.alternative_tss
+   basenji_test_genes.clustermap
+   basenji_test_genes.cor_table
+   basenji_test_genes.gene_table
+   basenji_test_genes.normalize_targets
+   basenji_test_genes.quantile_normalize
+   basenji_test_genes.replicate_correlations
+   basenji_test_genes.quantile_accuracy
+   basenji_test_genes.quantile_indexes
+   basenji_test_genes.variance_accuracy
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: alternative_tss(tss_targets, tss_preds, gene_data, out_base, log_pseudo=1, tss_var_t=1, scatter_pct=0.02)
+
+   Compare predicted to experimental log2 TSS1 to TSS2 ratio. 
+
+
+.. py:function:: clustermap(gene_values, out_pdf, color=None, table=False)
+
+   Generate a clustered heatmap using seaborn. 
+
+
+.. py:function:: cor_table(gene_targets, gene_preds, target_ids, target_labels, target_indexes, out_file, draw_plots=False)
+
+   Print a table and plot the distribution of target correlations. 
+
+
+.. py:function:: gene_table(gene_targets, gene_preds, gene_iter, target_labels, target_indexes, out_prefix, plot_scatter)
+
+   Print a gene-based statistics table and scatter plot for the given target indexes.
+
+
+.. py:function:: normalize_targets(gene_values, log_pseudo=1, outlier_mult=10)
+
+   Normalize gene-target values across targets. 
+
+
+.. py:function:: quantile_normalize(gene_expr, quantile_stat='median')
+
+   Quantile normalize across targets. 
+
+
+.. py:function:: replicate_correlations(replicate_lists, gene_targets, gene_preds, target_indexes, out_prefix, scatter_plots=False)
+
+   Study replicate correlations. 
+
+
+.. py:function:: quantile_accuracy(gene_targets, gene_preds, gene_stat, out_pdf, numq=4)
+
+   Plot accuracy (PearsonR) in quantile bins across targets. 
+
+
+.. py:function:: quantile_indexes(values, numq)
+
+   Return a list of lists of indexes referring to data points in the
+   corresponding quantiles.
+
+
+.. py:function:: variance_accuracy(gene_targets, gene_preds, out_prefix, log_pseudo=None)
+
+   Compare MSE accuracy to gene mean and variance.
+
+   Assumes the targets and predictions have been normalized.
+
+

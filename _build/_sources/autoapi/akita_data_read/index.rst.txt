@@ -1,0 +1,22 @@
+:py:mod:`akita_data_read`
+=========================
+
+.. py:module:: akita_data_read
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   akita_data_read.main
+
+
+
+.. py:function:: main()
+
+

@@ -1,0 +1,30 @@
+:py:mod:`akita_data_write`
+==========================
+
+.. py:module:: akita_data_write
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   akita_data_write.main
+   akita_data_write._bytes_feature
+   akita_data_write._int_feature
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: _bytes_feature(value)
+
+
+.. py:function:: _int_feature(value)
+
+

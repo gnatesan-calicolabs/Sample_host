@@ -1,0 +1,32 @@
+:py:mod:`borzoi_satg_gene`
+==========================
+
+.. py:module:: borzoi_satg_gene
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   borzoi_satg_gene.main
+   borzoi_satg_gene.unaugment_grads
+   borzoi_satg_gene.make_seq_1hot
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: unaugment_grads(grads, fwdrc=False, shift=0)
+
+   Undo sequence augmentation.
+
+
+.. py:function:: make_seq_1hot(genome_open, chrm, start, end, seq_len)
+
+

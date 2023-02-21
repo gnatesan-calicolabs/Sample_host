@@ -1,0 +1,30 @@
+:py:mod:`basenji_motifs_inject_folds`
+=====================================
+
+.. py:module:: basenji_motifs_inject_folds
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_motifs_inject_folds.main
+   basenji_motifs_inject_folds.ensemble_scores_h5
+   basenji_motifs_inject_folds.options_string
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: ensemble_scores_h5(ensemble_dir, scores_files)
+
+
+.. py:function:: options_string(options, group_options, rep_dir)
+
+

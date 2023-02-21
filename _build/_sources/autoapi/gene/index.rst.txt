@@ -1,0 +1,62 @@
+:py:mod:`gene`
+==============
+
+.. py:module:: gene
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   gene.Gene
+   gene.GeneSeq
+   gene.TSS
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   gene.map_tss_genes
+
+
+
+.. py:class:: Gene(gene_id, tss_list)
+
+
+.. py:class:: GeneSeq(chrom, start, end, tss_list=None)
+
+   .. py:method:: gene_names(tss=False)
+
+      Return gene/TSS names. 
+
+
+   .. py:method:: append_tss(tss)
+
+
+   .. py:method:: __str__()
+
+      Return str(self).
+
+
+
+.. py:class:: TSS(identifier, gene_id, chrom, pos, gene_seq, seq_index=False, strand=None)
+
+   .. py:method:: seq_bin(width=128, pred_buffer=0)
+
+
+   .. py:method:: __str__()
+
+      Return str(self).
+
+
+
+.. py:function:: map_tss_genes(tss_values, tss_list, tss_radius=0)
+
+

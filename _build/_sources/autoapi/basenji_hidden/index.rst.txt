@@ -1,0 +1,26 @@
+:py:mod:`basenji_hidden`
+========================
+
+.. py:module:: basenji_hidden
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_hidden.main
+   basenji_hidden.regplot
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: regplot(vals1, vals2, out_pdf, alpha=0.5, x_label=None, y_label=None)
+
+

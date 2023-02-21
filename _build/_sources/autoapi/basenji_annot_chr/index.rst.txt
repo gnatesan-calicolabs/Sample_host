@@ -1,0 +1,38 @@
+:py:mod:`basenji_annot_chr`
+===========================
+
+.. py:module:: basenji_annot_chr
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_annot_chr.main
+   basenji_annot_chr.h5_annot_chr
+   basenji_annot_chr.sample_sad
+   basenji_annot_chr.read_enough_sad
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: h5_annot_chr(sad_file, bim_file, annot_file, model=None, targets_df=None, sad_stat='SAD', unsigned=False, separate=False)
+
+   h5_annot_chr
+
+   Process one chromosome's SAD from from BIM to annot.
+
+
+.. py:function:: sample_sad(sad_dir, sad_max, sad_stat='SAD', targets_df=None)
+
+
+.. py:function:: read_enough_sad(sad_dir, sad_max, sad_stat='SAD', targets_df=None)
+
+

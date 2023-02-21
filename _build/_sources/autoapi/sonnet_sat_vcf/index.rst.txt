@@ -1,0 +1,22 @@
+:py:mod:`sonnet_sat_vcf`
+========================
+
+.. py:module:: sonnet_sat_vcf
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   sonnet_sat_vcf.main
+
+
+
+.. py:function:: main()
+
+

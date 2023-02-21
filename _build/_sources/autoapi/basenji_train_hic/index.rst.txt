@@ -1,0 +1,34 @@
+:py:mod:`basenji_train_hic`
+===========================
+
+.. py:module:: basenji_train_hic
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train_hic.main
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train_hic.FLAGS
+
+
+.. py:data:: FLAGS
+
+   
+
+.. py:function:: main(_)
+
+

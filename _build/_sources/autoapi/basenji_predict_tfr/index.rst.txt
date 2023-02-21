@@ -1,0 +1,22 @@
+:py:mod:`basenji_predict_tfr`
+=============================
+
+.. py:module:: basenji_predict_tfr
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_predict_tfr.main
+
+
+
+.. py:function:: main()
+
+

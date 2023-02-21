@@ -1,0 +1,22 @@
+:py:mod:`basenji_fetch_vcf`
+===========================
+
+.. py:module:: basenji_fetch_vcf
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_fetch_vcf.main
+
+
+
+.. py:function:: main()
+
+

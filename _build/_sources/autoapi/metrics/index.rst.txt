@@ -1,0 +1,113 @@
+:py:mod:`metrics`
+=================
+
+.. py:module:: metrics
+
+.. autoapi-nested-parse::
+
+   SeqNN regression metrics.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   metrics.MeanSquaredErrorUDot
+   metrics.PoissonKL
+   metrics.PoissonMultinomial
+   metrics.SeqAUC
+   metrics.PearsonR
+   metrics.R2
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   metrics.mean_squared_error_udot
+   metrics.poisson_kl
+   metrics.poisson_multinomial
+
+
+
+.. py:function:: mean_squared_error_udot(y_true, y_pred, udot_weight=1)
+
+
+.. py:class:: MeanSquaredErrorUDot(udot_weight=1, reduction=losses_utils.ReductionV2.AUTO, name='mse_udot')
+
+   Bases: :py:obj:`tensorflow.python.keras.losses.LossFunctionWrapper`
+
+
+.. py:function:: poisson_kl(y_true, y_pred, kl_weight=1, epsilon=0.001)
+
+
+.. py:class:: PoissonKL(kl_weight=1, reduction=losses_utils.ReductionV2.AUTO, name='poisson_kl')
+
+   Bases: :py:obj:`tensorflow.python.keras.losses.LossFunctionWrapper`
+
+
+.. py:function:: poisson_multinomial(y_true, y_pred, total_weight=1, epsilon=1e-06, rescale=False)
+
+
+.. py:class:: PoissonMultinomial(total_weight=1, reduction=losses_utils.ReductionV2.AUTO, name='poisson_multinomial')
+
+   Bases: :py:obj:`tensorflow.python.keras.losses.LossFunctionWrapper`
+
+
+.. py:class:: SeqAUC(curve='ROC', name=None, summarize=True, **kwargs)
+
+   Bases: :py:obj:`tensorflow.keras.metrics.AUC`
+
+   .. py:method:: update_state(y_true, y_pred, **kwargs)
+
+      Flatten sequence length before update.
+
+
+   .. py:method:: interpolate_pr_auc()
+
+      Add option to remove summary.
+
+
+   .. py:method:: result()
+
+      Add option to remove summary.
+      It's not clear why, but these metrics_utils == aren't working for tf.26 on.
+      I'm hacking a solution to compare the values instead.
+
+
+
+.. py:class:: PearsonR(num_targets, summarize=True, name='pearsonr', **kwargs)
+
+   Bases: :py:obj:`tensorflow.keras.metrics.Metric`
+
+   .. py:method:: update_state(y_true, y_pred, sample_weight=None)
+
+
+   .. py:method:: result()
+
+
+   .. py:method:: reset_state()
+
+
+
+.. py:class:: R2(num_targets, summarize=True, name='r2', **kwargs)
+
+   Bases: :py:obj:`tensorflow.keras.metrics.Metric`
+
+   .. py:method:: update_state(y_true, y_pred, sample_weight=None)
+
+
+   .. py:method:: result()
+
+
+   .. py:method:: reset_state()
+
+
+

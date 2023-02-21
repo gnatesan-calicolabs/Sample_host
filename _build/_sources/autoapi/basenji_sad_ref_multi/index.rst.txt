@@ -1,0 +1,29 @@
+:py:mod:`basenji_sad_ref_multi`
+===============================
+
+.. py:module:: basenji_sad_ref_multi
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_sad_ref_multi.main
+   basenji_sad_ref_multi.job_completed
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: job_completed(options, pi)
+
+   Check whether a specific job has generated its
+   output file.
+
+

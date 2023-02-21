@@ -1,0 +1,22 @@
+:py:mod:`basenji_sat_vcf`
+=========================
+
+.. py:module:: basenji_sat_vcf
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_sat_vcf.main
+
+
+
+.. py:function:: main()
+
+

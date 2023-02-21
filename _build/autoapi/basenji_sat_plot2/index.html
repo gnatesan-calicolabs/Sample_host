@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>basenji_sat_plot2 &#8212; Init_website 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-basenji_sat_plot2">
+<span id="basenji-sat-plot2"></span><h1><a class="reference internal" href="#module-basenji_sat_plot2" title="basenji_sat_plot2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">basenji_sat_plot2</span></code></a><a class="headerlink" href="#module-basenji_sat_plot2" title="Permalink to this heading">¶</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_sat_plot2.main" title="basenji_sat_plot2.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_sat_plot2.expand_4l" title="basenji_sat_plot2.expand_4l"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_4l</span></code></a>(sat_lg_ti, seq_align)</p></td>
+<td><p>Expand a sat mut score array to another dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_sat_plot2.expand_scores_align" title="basenji_sat_plot2.expand_scores_align"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_scores_align</span></code></a>(scores1, scores2, seq1_1hot, ...)</p></td>
+<td><p>Expand two scores arrays according to a sequence alignment with NaNs in gaps.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_sat_plot2.global_align" title="basenji_sat_plot2.global_align"><code class="xref py py-obj docutils literal notranslate"><span class="pre">global_align</span></code></a>(seq1_1hot, seq2_1hot)</p></td>
+<td><p>Align two 1-hot encoded sequences.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_sat_plot2.plot_seqlogo" title="basenji_sat_plot2.plot_seqlogo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_seqlogo</span></code></a>(ax, seq_align, sat_score_ti[, pseudo_pct])</p></td>
+<td><p>Plot a sequence logo for the loss/gain scores.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_sat_plot2.setup_plot" title="basenji_sat_plot2.setup_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_plot</span></code></a>(figure_width, plot_len)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_sat_plot2.subplot_params" title="basenji_sat_plot2.subplot_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subplot_params</span></code></a>(seq_len)</p></td>
+<td><p>Specify subplot layout parameters for various sequence lengths.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_sat_plot2.main">
+<span class="sig-prename descclassname"><span class="pre">basenji_sat_plot2.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#basenji_sat_plot2.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_sat_plot2.expand_4l">
+<span class="sig-prename descclassname"><span class="pre">basenji_sat_plot2.</span></span><span class="sig-name descname"><span class="pre">expand_4l</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sat_lg_ti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_align</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_sat_plot2.expand_4l" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Expand a sat mut score array to another dimension</dt><dd><p>representing nucleotides.</p>
+</dd>
+<dt>In:</dt><dd><dl class="simple">
+<dt>sat_lg_ti (l array): Sat mut loss/gain scores for a single</dt><dd><p>sequence and target.</p>
+</dd>
+</dl>
+<p>seq_align (l array): Sequence nucleotides, with gaps.</p>
+</dd>
+<dt>Out:</dt><dd><p>sat_loss_4l (lx4 array): Score-hot coding?</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_sat_plot2.expand_scores_align">
+<span class="sig-prename descclassname"><span class="pre">basenji_sat_plot2.</span></span><span class="sig-name descname"><span class="pre">expand_scores_align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scores1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq1_1hot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq2_1hot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq1_align</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq2_align</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_sat_plot2.expand_scores_align" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expand two scores arrays according to a sequence alignment with NaNs in gaps.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_sat_plot2.global_align">
+<span class="sig-prename descclassname"><span class="pre">basenji_sat_plot2.</span></span><span class="sig-name descname"><span class="pre">global_align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq1_1hot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq2_1hot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_sat_plot2.global_align" title="Permalink to this definition">¶</a></dt>
+<dd><p>Align two 1-hot encoded sequences.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_sat_plot2.plot_seqlogo">
+<span class="sig-prename descclassname"><span class="pre">basenji_sat_plot2.</span></span><span class="sig-name descname"><span class="pre">plot_seqlogo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_align</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sat_score_ti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudo_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_sat_plot2.plot_seqlogo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a sequence logo for the loss/gain scores.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>ax (Axis): matplotlib axis to plot to.
+seq_align (L array): Sequence nucleotides, with gaps.
+sat_score_ti (L_sm array): Minimum mutation delta across satmut length.
+pseudo_pct (float): % of the max to add as a pseudocount.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_sat_plot2.setup_plot">
+<span class="sig-prename descclassname"><span class="pre">basenji_sat_plot2.</span></span><span class="sig-name descname"><span class="pre">setup_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_len</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_sat_plot2.setup_plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_sat_plot2.subplot_params">
+<span class="sig-prename descclassname"><span class="pre">basenji_sat_plot2.</span></span><span class="sig-name descname"><span class="pre">subplot_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq_len</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_sat_plot2.subplot_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify subplot layout parameters for various sequence lengths.</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Init_website</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Kelley, Gunalan Natesan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/autoapi/basenji_sat_plot2/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

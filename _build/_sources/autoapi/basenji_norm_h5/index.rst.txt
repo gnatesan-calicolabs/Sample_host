@@ -1,0 +1,22 @@
+:py:mod:`basenji_norm_h5`
+=========================
+
+.. py:module:: basenji_norm_h5
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_norm_h5.main
+
+
+
+.. py:function:: main()
+
+

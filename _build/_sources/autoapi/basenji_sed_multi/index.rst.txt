@@ -1,0 +1,52 @@
+:py:mod:`basenji_sed_multi`
+===========================
+
+.. py:module:: basenji_sed_multi
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   basenji_sed_multi.MultiLine
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_sed_multi.main
+   basenji_sed_multi.collect_table
+   basenji_sed_multi.collect_table_multi
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: collect_table(file_name, out_dir, num_procs)
+
+
+.. py:function:: collect_table_multi(file_name, out_dir, num_procs, log_pseudo)
+
+
+.. py:class:: MultiLine(a)
+
+   .. py:attribute:: __slots__
+      :value: ('rsid', 'a1', 'a2', 'gene', 'snp_dist_gene', 'preds', 'ids', 'labels')
+
+      
+
+   .. py:method:: add(a)
+
+
+   .. py:method:: print_lines(out_open, log_pseudo)
+
+
+

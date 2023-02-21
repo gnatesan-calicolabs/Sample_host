@@ -1,0 +1,30 @@
+:py:mod:`basenji_bench_gtex_cmp`
+================================
+
+.. py:module:: basenji_bench_gtex_cmp
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_bench_gtex_cmp.main
+   basenji_bench_gtex_cmp.read_auroc
+   basenji_bench_gtex_cmp.ttest_alt
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: read_auroc(stats_file)
+
+
+.. py:function:: ttest_alt(a, b, alternative='two-sided')
+
+

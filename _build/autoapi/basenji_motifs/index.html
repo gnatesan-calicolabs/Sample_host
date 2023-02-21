@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>basenji_motifs &#8212; Init_website 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-basenji_motifs">
+<span id="basenji-motifs"></span><h1><a class="reference internal" href="#module-basenji_motifs" title="basenji_motifs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">basenji_motifs</span></code></a><a class="headerlink" href="#module-basenji_motifs" title="Permalink to this heading">¶</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.main" title="basenji_motifs.main"><code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_motifs.get_motif_proteins" title="basenji_motifs.get_motif_proteins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_motif_proteins</span></code></a>(meme_db_file)</p></td>
+<td><p>Hash motif_id's to protein names using the MEME DB file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.info_content" title="basenji_motifs.info_content"><code class="xref py py-obj docutils literal notranslate"><span class="pre">info_content</span></code></a>(pwm[, transpose, bg_gc])</p></td>
+<td><p>Compute PWM information content.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_motifs.make_filter_pwm" title="basenji_motifs.make_filter_pwm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_filter_pwm</span></code></a>(filter_fasta)</p></td>
+<td><p>Make a PWM for this filter from its top hits</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.meme_add" title="basenji_motifs.meme_add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meme_add</span></code></a>(meme_out, f, filter_pwm, nsites[, trim_filters])</p></td>
+<td><p>Print a filter to the growing MEME file</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_motifs.meme_intro" title="basenji_motifs.meme_intro"><code class="xref py py-obj docutils literal notranslate"><span class="pre">meme_intro</span></code></a>(meme_file, seqs)</p></td>
+<td><p>Open MEME motif format file and print intro</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.name_filters" title="basenji_motifs.name_filters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name_filters</span></code></a>(num_filters, tomtom_file, meme_db_file)</p></td>
+<td><p>Name the filters using Tomtom matches.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_motifs.plot_target_corr" title="basenji_motifs.plot_target_corr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_target_corr</span></code></a>(filter_outs, seq_targets, ...[, seq_op])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.plot_filter_seq_heat" title="basenji_motifs.plot_filter_seq_heat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_filter_seq_heat</span></code></a>(filter_outs, out_pdf[, whiten, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_motifs.plot_filter_seg_heat" title="basenji_motifs.plot_filter_seg_heat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_filter_seg_heat</span></code></a>(filter_outs, out_pdf[, whiten, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.filter_motif" title="basenji_motifs.filter_motif"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_motif</span></code></a>(param_matrix)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_motifs.filter_possum" title="basenji_motifs.filter_possum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_possum</span></code></a>(param_matrix, motif_id, possum_file[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.plot_filter_heat" title="basenji_motifs.plot_filter_heat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_filter_heat</span></code></a>(param_matrix, out_pdf)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#basenji_motifs.plot_filter_logo" title="basenji_motifs.plot_filter_logo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_filter_logo</span></code></a>(filter_outs, filter_size, seqs, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.plot_score_density" title="basenji_motifs.plot_score_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_score_density</span></code></a>(f_scores, out_pdf)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#basenji_motifs.weblogo_opts" title="basenji_motifs.weblogo_opts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weblogo_opts</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="basenji_motifs.weblogo_opts">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">weblogo_opts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'-X</span> <span class="pre">NO</span> <span class="pre">-Y</span> <span class="pre">NO</span> <span class="pre">--errorbars</span> <span class="pre">NO</span> <span class="pre">--fineprint</span> <span class="pre">&quot;&quot;'</span></em><a class="headerlink" href="#basenji_motifs.weblogo_opts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.main">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.get_motif_proteins">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">get_motif_proteins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meme_db_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.get_motif_proteins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hash motif_id’s to protein names using the MEME DB file</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.info_content">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">info_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pwm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_gc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.415</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.info_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute PWM information content.</p>
+<p>In the original analysis, I used a bg_gc=0.5. For any
+future analysis, I ought to switch to the true hg38
+value of 0.415.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.make_filter_pwm">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">make_filter_pwm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_fasta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.make_filter_pwm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a PWM for this filter from its top hits</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.meme_add">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">meme_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meme_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_pwm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsites</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trim_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.meme_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a filter to the growing MEME file</p>
+<dl class="simple">
+<dt>Attrs:</dt><dd><p>meme_out : open file
+f (int) : filter index #
+filter_pwm (array) : filter PWM array
+nsites (int) : number of filter sites</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.meme_intro">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">meme_intro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meme_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.meme_intro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open MEME motif format file and print intro</p>
+<dl class="simple">
+<dt>Attrs:</dt><dd><p>meme_file (str) : filename
+seqs [str] : list of strings for obtaining background freqs</p>
+</dd>
+<dt>Returns:</dt><dd><p>mem_out : open MEME file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.name_filters">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">name_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tomtom_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meme_db_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.name_filters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name the filters using Tomtom matches.</p>
+<dl class="simple">
+<dt>Attrs:</dt><dd><p>num_filters (int) : total number of filters
+tomtom_file (str) : filename of Tomtom output table.
+meme_db_file (str) : filename of MEME db</p>
+</dd>
+<dt>Returns:</dt><dd><p>filter_names [str] :</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.plot_target_corr">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">plot_target_corr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_outs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_pdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_op</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.plot_target_corr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.plot_filter_seq_heat">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">plot_filter_seq_heat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_outs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_pdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whiten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_dead</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.plot_filter_seq_heat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.plot_filter_seg_heat">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">plot_filter_seg_heat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_outs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_pdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whiten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_dead</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.plot_filter_seg_heat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.filter_motif">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">filter_motif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.filter_motif" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.filter_possum">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">filter_possum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motif_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possum_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trim_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mult</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.filter_possum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.plot_filter_heat">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">plot_filter_heat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_pdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.plot_filter_heat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.plot_filter_logo">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">plot_filter_logo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_outs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxpct_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.plot_filter_logo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="basenji_motifs.plot_score_density">
+<span class="sig-prename descclassname"><span class="pre">basenji_motifs.</span></span><span class="sig-name descname"><span class="pre">plot_score_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_scores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_pdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#basenji_motifs.plot_score_density" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Init_website</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Kelley, Gunalan Natesan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/autoapi/basenji_motifs/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

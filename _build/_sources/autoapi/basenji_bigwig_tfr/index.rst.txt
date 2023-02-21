@@ -1,0 +1,22 @@
+:py:mod:`basenji_bigwig_tfr`
+============================
+
+.. py:module:: basenji_bigwig_tfr
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_bigwig_tfr.main
+
+
+
+.. py:function:: main()
+
+

@@ -1,0 +1,34 @@
+:py:mod:`basenji_train_app`
+===========================
+
+.. py:module:: basenji_train_app
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train_app.main
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train_app.FLAGS
+
+
+.. py:data:: FLAGS
+
+   
+
+.. py:function:: main(_)
+
+

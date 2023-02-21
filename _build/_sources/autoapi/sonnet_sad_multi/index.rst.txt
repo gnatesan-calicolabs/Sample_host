@@ -1,0 +1,33 @@
+:py:mod:`sonnet_sad_multi`
+==========================
+
+.. py:module:: sonnet_sad_multi
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   sonnet_sad_multi.main
+   sonnet_sad_multi.collect_h5
+   sonnet_sad_multi.job_completed
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: collect_h5(file_name, out_dir, num_procs)
+
+
+.. py:function:: job_completed(options, pi)
+
+   Check whether a specific job has generated its
+   output file.
+
+

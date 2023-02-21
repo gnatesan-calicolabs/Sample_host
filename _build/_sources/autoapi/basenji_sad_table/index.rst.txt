@@ -1,0 +1,26 @@
+:py:mod:`basenji_sad_table`
+===========================
+
+.. py:module:: basenji_sad_table
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_sad_table.main
+   basenji_sad_table.sad_h5_df
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: sad_h5_df(sad_h5_file, quant_h5_file=None)
+
+

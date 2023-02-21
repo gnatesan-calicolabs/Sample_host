@@ -1,0 +1,139 @@
+:py:mod:`ops`
+=============
+
+.. py:module:: ops
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   ops.adjust_max
+   ops.reverse_complement_transform
+   ops.reverse_complement
+   ops.variance
+   ops.r2_metric
+   ops._per_target_mean
+   ops._per_target_variance
+   ops.per_target_r2
+   ops.r2_averaged_over_all_prediction_tasks
+
+
+
+.. py:function:: adjust_max(start, stop, start_value, stop_value, name=None)
+
+
+.. py:function:: reverse_complement_transform(data_ops)
+
+   Reverse complement of batched onehot seq and corresponding label and na.
+
+
+.. py:function:: reverse_complement(input_seq, lengths=None)
+
+   Reverse complement a list of one hot coded nucleotide Tensors.
+   Args:
+   input_seq: Sequence of seq_len tensors of dimension (batch_size, 4)
+   lengths:   A `Tensor` of dimension batch_size, containing lengths for each
+              sequence in the batch. If "None" is specified, simply reverse
+              complements the list.
+   Returns:
+   reverse complemented sequence
+
+
+.. py:function:: variance(data, weights=None)
+
+   Returns the variance of input tensor t, each entry weighted by the
+   corresponding index in weights.
+
+   Follows the tf.metrics API for an idempotent tensor and an update tensor.
+
+   Args:
+     data: input tensor of arbitrary shape.
+     weights: input tensor of same shape as `t`. When None, use a weight of 1 for
+       all inputs.
+
+   Returns:
+     variance_value: idempotent tensor containing the variance of `t`, whose
+       shape is `[1]`
+     update_op: A (non-idempotent) op to update the variance value
+
+
+.. py:function:: r2_metric(preds, targets, weights)
+
+   Returns ops for R2 statistic following the tf.metrics API.
+   Args:
+     preds: predictions (arbitrary shape)
+     targets: targets (same shape as predictions)
+     weights: per-instance weights (same shape as predictions)
+
+   Returns:
+     r2: idempotent tensor containing the r2 value
+     update_op: op for updating the value given new data
+
+
+.. py:function:: _per_target_mean(values, weights, name='per-target-mean')
+
+   Compute weighted mean across all but final dimension.
+
+   Args:
+     values: [..., num_targets] Tensor
+     weights: Tensor. Either the same shape as values or broadcastable to it.
+     name: string
+   Returns:
+     tuple containing tf.metrics-compatible value op and update_op.
+     The value_op has shape [num_targets].
+
+
+.. py:function:: _per_target_variance(data, weights=None)
+
+   Returns the variance of input tensor t, each entry weighted by the
+   corresponding index in weights.
+
+   Follows the tf.metrics API for an idempotent tensor and an update tensor.
+
+   Args:
+     data: input tensor of arbitrary shape.
+     weights: input tensor of same shape as `t`. When None, use a weight of 1 for
+       all inputs.
+
+   Returns:
+     variance_value: idempotent tensor containing the variance of `t`, whose
+       shape is `[1]`
+     update_op: A (non-idempotent) op to update the variance value
+
+
+.. py:function:: per_target_r2(preds, targets, weights)
+
+   Returns ops for per-target R2 statistic following the tf.metrics API.
+
+   Args:
+     preds: arbitrary shaped predictions, with final dimension
+            indexing distinct targets
+     targets: targets (same shape as predictions)
+     weights: per-instance weights (same shape as predictions)
+
+   Returns:
+     r2: idempotent [preds.shape[-1]] tensor of r2 values for each target.
+     update_op: op for updating the value given new data
+
+
+.. py:function:: r2_averaged_over_all_prediction_tasks(preds, targets, weights)
+
+   Returns ops for multi-task R2 statistic following the tf.metrics API.
+
+   Args:
+     preds: predictions, with final dimension indexing distinct targets.
+     targets: targets (same shape as predictions)
+     weights: per-instance weights (same shape as predictions)
+
+   Returns:
+     r2: idempotent tensor containing the mean multi-task r2 value,
+       of shape `[1]`
+     update_op: op for updating the value given new data
+
+

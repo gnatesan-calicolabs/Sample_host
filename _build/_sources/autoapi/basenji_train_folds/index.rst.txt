@@ -1,0 +1,30 @@
+:py:mod:`basenji_train_folds`
+=============================
+
+.. py:module:: basenji_train_folds
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   basenji_train_folds.main
+   basenji_train_folds.make_rep_data
+   basenji_train_folds.options_string
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: make_rep_data(data_dir, rep_data_dir, fi, ci)
+
+
+.. py:function:: options_string(options, train_options, rep_dir)
+
+

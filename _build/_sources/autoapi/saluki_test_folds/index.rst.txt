@@ -1,0 +1,34 @@
+:py:mod:`saluki_test_folds`
+===========================
+
+.. py:module:: saluki_test_folds
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   saluki_test_folds.main
+   saluki_test_folds.jointplot
+   saluki_test_folds.read_metrics
+   saluki_test_folds.stat_tests
+
+
+
+.. py:function:: main()
+
+
+.. py:function:: jointplot(ref_cors, exp_cors, out_pdf, label1, label2)
+
+
+.. py:function:: read_metrics(train_dir, num_folds, metric_best='val_pearsonr')
+
+
+.. py:function:: stat_tests(ref_cors, exp_cors, alternative)
+
+
