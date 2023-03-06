@@ -1,0 +1,28 @@
+API Reference
+=============
+
+This page contains auto-generated API reference documentation [#f1]_.
+
+.. toctree::
+   :titlesonly:
+
+   /autoapi/setup/index
+   /autoapi/seqnn/index
+   /autoapi/metrics/index
+   /autoapi/dataset/index
+   /autoapi/trainer/index
+   /autoapi/blocks/index
+   /autoapi/layers/index
+   /autoapi/params/index
+   /autoapi/tfrecord_batcher/index
+   /autoapi/augmentation/index
+   /autoapi/emerald/index
+   /autoapi/stream/index
+   /autoapi/genedata/index
+   /autoapi/ops/index
+   /autoapi/seqnn_util/index
+   /autoapi/gene/index
+   /autoapi/accuracy/index
+   /autoapi/first_step_unit_test/index
+
+.. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

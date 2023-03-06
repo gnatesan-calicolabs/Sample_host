@@ -1,0 +1,24 @@
+:py:mod:`first_step_unit_test`
+==============================
+
+.. py:module:: first_step_unit_test
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   first_step_unit_test.main
+
+
+
+.. py:function:: main()
+
+   options to modify training parameters by calling from command line
+
+

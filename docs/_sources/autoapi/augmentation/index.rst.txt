@@ -1,0 +1,111 @@
+:py:mod:`augmentation`
+======================
+
+.. py:module:: augmentation
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   augmentation.stochastic_rc
+   augmentation.reverse_preds
+   augmentation.shift_sequence
+   augmentation.augment_deterministic_set
+   augmentation.augment_deterministic
+   augmentation.augment_deterministic_rc
+   augmentation.augment_stochastic_rc
+   augmentation.augment_stochastic_shifts
+   augmentation.augment_stochastic
+
+
+
+.. py:function:: stochastic_rc(seq_1hot)
+
+   Stochastically reverse complement a one hot encoded DNA sequence.
+
+
+.. py:function:: reverse_preds(rp_tuple)
+
+
+.. py:function:: shift_sequence(seq, shift_amount, pad_value=0.25)
+
+   Shift a sequence left or right by shift_amount.
+
+   Args:
+     seq: a [batch_size, sequence_length, sequence_depth] sequence to shift
+     shift_amount: the signed amount to shift (tf.int32 or int)
+     pad_value: value to fill the padding (primitive or scalar tf.Tensor)
+
+
+.. py:function:: augment_deterministic_set(data_ops, augment_rc=False, augment_shifts=[0])
+
+   Args:
+     data_ops: dict with keys 'sequence,' 'label,' and 'na.'
+     augment_rc: Boolean
+     augment_shifts: List of ints.
+   Returns
+     data_ops_list:
+
+
+.. py:function:: augment_deterministic(data_ops, augment_rc=False, augment_shift=0)
+
+   Apply a deterministic augmentation, specified by the parameters.
+
+   Args:
+     data_ops: dict with keys 'sequence,' 'label,' and 'na.'
+     augment_rc: Boolean
+     augment_shift: Int
+   Returns
+     data_ops: augmented data, with all existing keys transformed
+               and 'reverse_preds' bool added.
+
+
+.. py:function:: augment_deterministic_rc(data_ops)
+
+   Apply a deterministic reverse complement augmentation.
+
+   Args:
+     data_ops: dict with keys 'sequence,' 'label,' and 'na.'
+   Returns
+     data_ops_aug: augmented data ops
+
+
+.. py:function:: augment_stochastic_rc(data_ops)
+
+   Apply a stochastic reverse complement augmentation.
+
+   Args:
+     data_ops: dict with keys 'sequence,' 'label,' and 'na.'
+   Returns
+     data_ops_aug: augmented data
+
+
+.. py:function:: augment_stochastic_shifts(seq, augment_shifts)
+
+   Apply a stochastic shift augmentation.
+
+   Args:
+     seq: input sequence of size [batch_size, length, depth]
+     augment_shifts: list of int offsets to sample from
+   Returns:
+     shifted and padded sequence of size [batch_size, length, depth]
+
+
+.. py:function:: augment_stochastic(data_ops, augment_rc=False, augment_shifts=[])
+
+   Apply stochastic augmentations,
+
+   Args:
+     data_ops: dict with keys 'sequence,' 'label,' and 'na.'
+     augment_rc: Boolean for whether to apply reverse complement augmentation.
+     augment_shifts: list of int offsets to sample shift augmentations.
+   Returns:
+     data_ops_aug: augmented data
+
+

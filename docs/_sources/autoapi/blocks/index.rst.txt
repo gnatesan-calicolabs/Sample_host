@@ -1,0 +1,551 @@
+:py:mod:`blocks`
+================
+
+.. py:module:: blocks
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   blocks.conv_block
+   blocks.conv_dna
+   blocks.conv_nac
+   blocks.conv_next
+   blocks.fpn_unet
+   blocks.fpn1_unet
+   blocks.upsample_unet
+   blocks.tconv_nac
+   blocks.concat_unet
+   blocks.conv_block_2d
+   blocks.conv_tower_v1
+   blocks.conv_tower
+   blocks.conv_tower_nac
+   blocks.res_tower
+   blocks.convnext_tower
+   blocks.transformer
+   blocks.transformer_split
+   blocks.transformer_dense
+   blocks.transformer2
+   blocks.swin_transformer
+   blocks.transformer_tower
+   blocks.squeeze_excite
+   blocks.wheeze_excite
+   blocks.global_context
+   blocks.dilated_dense
+   blocks.dilated_residual
+   blocks.dilated_residual_nac
+   blocks.dilated_residual_2d
+   blocks.exp
+   blocks.center_average
+   blocks.center_slice
+   blocks.concat_dist_2d
+   blocks.concat_position
+   blocks.cropping_2d
+   blocks.one_to_two
+   blocks.symmetrize_2d
+   blocks.upper_tri
+   blocks.factor_inverse
+   blocks.dense_block
+   blocks.dense_nac
+   blocks.final
+   blocks.dense
+   blocks.average_pooling
+   blocks.average_to_2d
+   blocks.max_to_2d
+   blocks.dot_to_2d
+   blocks.geodot_to_2d
+   blocks.concat_to_2d
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   blocks.name_func
+   blocks.keras_func
+
+
+.. py:function:: conv_block(inputs, filters=None, kernel_size=1, activation='relu', activation_end=None, stride=1, dilation_rate=1, l2_scale=0, dropout=0, conv_type='standard', pool_size=1, pool_type='max', norm_type=None, bn_momentum=0.99, norm_gamma=None, residual=False, kernel_initializer='he_normal', padding='same')
+
+   Construct a single convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters:       Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     stride:        Conv1D stride
+     dilation_rate: Conv1D dilation rate
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     conv_type:     Conv1D layer type
+     residual:      Residual connection boolean
+     pool_size:     Max pool width
+     norm_type:     Apply batch or layer normalization
+     bn_momentum:   BatchNorm momentum
+     norm_gamma:    BatchNorm gamma (defaults according to residual)
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: conv_dna(inputs, filters=None, kernel_size=15, activation='relu', stride=1, l2_scale=0, residual=False, dropout=0, dropout_residual=0, pool_size=1, pool_type='max', norm_type=None, bn_momentum=0.99, norm_gamma=None, use_bias=None, se=False, conv_type='standard', kernel_initializer='he_normal', padding='same')
+
+   Construct a single convolution block, assumed to be operating on DNA.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters:       Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     stride:        Conv1D stride
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     conv_type:     Conv1D layer type
+     pool_size:     Max pool width
+     norm_type:     Apply batch or layer normalization
+     bn_momentum:   BatchNorm momentum
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: conv_nac(inputs, filters=None, kernel_size=1, activation='relu', stride=1, dilation_rate=1, l2_scale=0, dropout=0, conv_type='standard', residual=False, pool_size=1, pool_type='max', norm_type=None, bn_momentum=0.99, norm_gamma=None, kernel_initializer='he_normal', padding='same', se=False)
+
+   Construct a single convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters:       Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     stride:        Conv1D stride
+     dilation_rate: Conv1D dilation rate
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     conv_type:     Conv1D layer type
+     residual:      Residual connection boolean
+     pool_size:     Max pool width
+     norm_type:     Apply batch or layer normalization
+     bn_momentum:   BatchNorm momentum
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: conv_next(inputs, filters=None, kernel_size=7, activation='relu', dense_expansion=2.0, dilation_rate=1, l2_scale=0, dropout=0, residual=False, pool_size=1, pool_type='max', kernel_initializer='he_normal', padding='same', norm_type=None, bn_momentum=0.99)
+
+   Construct a single convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters:       Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     dilation_rate: Conv1D dilation rate
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     residual:      Residual connection boolean
+     pool_size:     Max pool width
+     bn_momentum:   BatchNorm momentum
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: fpn_unet(inputs, unet_repr, activation='relu', stride=2, l2_scale=0, dropout=0, norm_type=None, bn_momentum=0.99, kernel_size=1, kernel_initializer='he_normal')
+
+   Construct a feature pyramid network block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     stride:        UpSample stride
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     norm_type:     Apply batch or layer normalization
+     bn_momentum:   BatchNorm momentum
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: fpn1_unet(inputs, unet_repr, activation='relu', stride=2, l2_scale=0, dropout=0, norm_type=None, bn_momentum=0.99, kernel_size=1, kernel_initializer='he_normal')
+
+   Construct a feature pyramid network block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     stride:        UpSample stride
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     norm_type:     Apply batch or layer normalization
+     bn_momentum:   BatchNorm momentum
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: upsample_unet(inputs, unet_repr, activation='relu', stride=2, l2_scale=0, dropout=0, norm_type=None, bn_momentum=0.99, kernel_size=1, kernel_initializer='he_normal')
+
+   Construct a single transposed convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters:       Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     stride:        UpSample stride
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     conv_type:     Conv1D layer type
+     norm_type:     Apply batch or layer normalization
+     bn_momentum:   BatchNorm momentum
+
+   Returns:
+     [batch_size, stride*seq_length, features] output sequence
+
+
+.. py:function:: tconv_nac(inputs, filters=None, kernel_size=1, activation='relu', stride=1, l2_scale=0, dropout=0, conv_type='standard', norm_type=None, bn_momentum=0.99, norm_gamma=None, kernel_initializer='he_normal', padding='same')
+
+   Construct a single transposed convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters:       Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     activation:    relu/gelu/etc
+     stride:        UpSample stride
+     l2_scale:      L2 regularization weight.
+     dropout:       Dropout rate probability
+     conv_type:     Conv1D layer type
+     norm_type:     Apply batch or layer normalization
+     bn_momentum:   BatchNorm momentum
+
+   Returns:
+     [batch_size, stride*seq_length, features] output sequence
+
+
+.. py:function:: concat_unet(inputs, unet_repr, **kwargs)
+
+
+.. py:function:: conv_block_2d(inputs, filters=128, activation='relu', conv_type='standard', kernel_size=1, stride=1, dilation_rate=1, l2_scale=0, dropout=0, pool_size=1, norm_type=None, bn_momentum=0.99, norm_gamma='ones', kernel_initializer='he_normal', symmetric=False)
+
+   Construct a single 2D convolution block.   
+
+
+.. py:function:: conv_tower_v1(inputs, filters_init, filters_mult=1, repeat=1, **kwargs)
+
+   Construct a reducing convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters_init:  Initial Conv1D filters
+     filters_mult:  Multiplier for Conv1D filters
+     repeat:        Conv block repetitions
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: conv_tower(inputs, filters_init, filters_end=None, filters_mult=None, divisible_by=1, repeat=1, reprs=[], **kwargs)
+
+   Construct a reducing convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters_init:  Initial Conv1D filters
+     filters_end:   End Conv1D filters
+     filters_mult:  Multiplier for Conv1D filters
+     divisible_by:  Round filters to be divisible by (eg a power of two)
+     repeat:        Tower repetitions
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: conv_tower_nac(inputs, filters_init, filters_end=None, filters_mult=None, divisible_by=1, repeat=1, reprs=[], **kwargs)
+
+   Construct a reducing convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters_init:  Initial Conv1D filters
+     filters_end:   End Conv1D filters
+     filters_mult:  Multiplier for Conv1D filters
+     divisible_by:  Round filters to be divisible by (eg a power of two)
+     repeat:        Tower repetitions
+     reprs:         Append representations.
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: res_tower(inputs, filters_init, filters_end=None, filters_mult=None, kernel_size=1, dropout=0, pool_size=2, pool_type='max', divisible_by=1, repeat=1, num_convs=2, reprs=[], **kwargs)
+
+   Construct a reducing convolution block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters_init:  Initial Conv1D filters
+     filters_end:   End Conv1D filters
+     filters_mult:  Multiplier for Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     dropout:       Dropout on subsequent convolution blocks.
+     pool_size:     Pool width.
+     repeat:        Residual block repetitions
+     num_convs:     Conv blocks per residual layer
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: convnext_tower(inputs, filters_init, filters_end=None, filters_mult=None, kernel_size=1, dropout=0, pool_size=2, pool_type='max', divisible_by=1, repeat=1, num_convs=2, reprs=[], **kwargs)
+
+   Abc.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     filters_init:  Initial Conv1D filters
+     filters_end:   End Conv1D filters
+     filters_mult:  Multiplier for Conv1D filters
+     kernel_size:   Conv1D kernel_size
+     dropout:       Dropout on subsequent convolution blocks.
+     pool_size:     Pool width.
+     repeat:        Residual block repetitions
+     num_convs:     Conv blocks per residual layer
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: transformer(inputs, key_size=None, heads=1, out_size=None, activation='relu', dense_expansion=2.0, content_position_bias=True, dropout=0.25, attention_dropout=0.05, position_dropout=0.01, l2_scale=0, mha_l2_scale=0, num_position_features=None, qkv_width=1, mha_initializer='he_normal', kernel_initializer='he_normal', **kwargs)
+
+   Construct a transformer block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     key_size:        Conv block repetitions
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: transformer_split(inputs, splits=2, key_size=None, heads=1, out_size=None, activation='relu', dense_expansion=2.0, content_position_bias=True, dropout=0.25, attention_dropout=0.05, position_dropout=0.01, l2_scale=0, mha_l2_scale=0, num_position_features=None, qkv_width=1, mha_initializer='he_normal', kernel_initializer='he_normal', **kwargs)
+
+   Construct a transformer block.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     key_size:        Conv block repetitions
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: transformer_dense(inputs, out_size, dense_expansion, l2_scale, dropout, kernel_initializer)
+
+   Transformer block dense portion.
+
+
+.. py:function:: transformer2(inputs, key_size=None, heads=1, out_size=None, activation='relu', num_position_features=None, attention_dropout=0.05, position_dropout=0.01, dropout=0.25, dense_expansion=2.0, qkv_width=1, **kwargs)
+
+   Construct a transformer block, with length-wise pooling before
+      returning to full length.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     key_size:        Conv block repetitions
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: swin_transformer(inputs, **kwargs)
+
+
+.. py:function:: transformer_tower(inputs, repeat=2, block_type='transformer', **kwargs)
+
+   Construct a tower of repeated transformer blocks.
+
+   Args:
+     inputs:        [batch_size, seq_length, features] input sequence
+     repeat:        Conv block repetitions
+
+   Returns:
+     [batch_size, seq_length, features] output sequence
+
+
+.. py:function:: squeeze_excite(inputs, activation='relu', bottleneck_ratio=8, additive=False, norm_type=None, bn_momentum=0.9, **kwargs)
+
+
+.. py:function:: wheeze_excite(inputs, pool_size, **kwargs)
+
+
+.. py:function:: global_context(inputs, **kwargs)
+
+
+.. py:function:: dilated_dense(inputs, filters, kernel_size=3, rate_mult=2, conv_type='standard', dropout=0, repeat=1, **kwargs)
+
+   Construct a residual dilated dense block.
+
+   Args:
+
+   Returns:
+
+
+.. py:function:: dilated_residual(inputs, filters, kernel_size=3, rate_mult=2, dropout=0, repeat=1, conv_type='standard', norm_type=None, round=False, **kwargs)
+
+   Construct a residual dilated convolution block.
+
+   Args:
+
+   Returns:
+
+
+.. py:function:: dilated_residual_nac(inputs, filters, kernel_size=3, rate_mult=2, dropout=0, repeat=1, **kwargs)
+
+   Construct a residual dilated convolution block.
+
+   Args:
+
+   Returns:
+
+
+.. py:function:: dilated_residual_2d(inputs, filters, kernel_size=3, rate_mult=2, dropout=0, repeat=1, symmetric=True, **kwargs)
+
+   Construct a residual dilated convolution block.
+     
+
+
+.. py:function:: exp(inputs, base=None, minus=None, **kwargs)
+
+
+.. py:function:: center_average(inputs, center, **kwargs)
+
+
+.. py:function:: center_slice(inputs, center, **kwargs)
+
+
+.. py:function:: concat_dist_2d(inputs, **kwargs)
+
+
+.. py:function:: concat_position(inputs, transform='abs', power=1, **kwargs)
+
+
+.. py:function:: cropping_2d(inputs, cropping, **kwargs)
+
+
+.. py:function:: one_to_two(inputs, operation='mean', **kwargs)
+
+
+.. py:function:: symmetrize_2d(inputs, **kwargs)
+
+
+.. py:function:: upper_tri(inputs, diagonal_offset=2, **kwargs)
+
+
+.. py:function:: factor_inverse(inputs, components_file, **kwargs)
+
+
+.. py:function:: dense_block(inputs, units=None, activation='relu', activation_end=None, flatten=False, dropout=0, l2_scale=0, l1_scale=0, residual=False, norm_type=None, bn_momentum=0.99, norm_gamma=None, kernel_initializer='he_normal', **kwargs)
+
+   Construct a single convolution block.
+
+   Args:
+     inputs:         [batch_size, seq_length, features] input sequence
+     units:          Conv1D filters
+     activation:     relu/gelu/etc
+     activation_end: Compute activation after the other operations
+     flatten:        Flatten across positional axis
+     dropout:        Dropout rate probability
+     l2_scale:       L2 regularization weight.
+     l1_scale:       L1 regularization weight.
+     residual:       Residual connection boolean
+     batch_norm:     Apply batch normalization
+     bn_momentum:    BatchNorm momentum
+     norm_gamma:       BatchNorm gamma (defaults according to residual)
+
+   Returns:
+     [batch_size, seq_length(?), features] output sequence
+
+
+.. py:function:: dense_nac(inputs, units=None, activation='relu', flatten=False, dropout=0, l2_scale=0, l1_scale=0, residual=False, norm_type=None, bn_momentum=0.99, norm_gamma=None, kernel_initializer='he_normal', **kwargs)
+
+   Construct a single convolution block.
+
+   Args:
+     inputs:         [batch_size, seq_length, features] input sequence
+     units:          Conv1D filters
+     activation:     relu/gelu/etc
+     activation_end: Compute activation after the other operations
+     flatten:        Flatten across positional axis
+     dropout:        Dropout rate probability
+     l2_scale:       L2 regularization weight.
+     l1_scale:       L1 regularization weight.
+     residual:       Residual connection boolean
+     batch_norm:     Apply batch normalization
+     bn_momentum:    BatchNorm momentum
+     norm_gamma:       BatchNorm gamma (defaults according to residual)
+
+   Returns:
+     [batch_size, seq_length(?), features] output sequence
+
+
+.. py:function:: final(inputs, units, activation='linear', flatten=False, kernel_initializer='he_normal', l2_scale=0, l1_scale=0, **kwargs)
+
+   Final simple transformation before comparison to targets.
+
+   Args:
+     inputs:         [batch_size, seq_length, features] input sequence
+     units:          Dense units
+     activation:     relu/gelu/etc
+     flatten:        Flatten positional axis.
+     l2_scale:       L2 regularization weight.
+     l1_scale:       L1 regularization weight.
+
+   Returns:
+     [batch_size, seq_length(?), units] output sequence
+
+
+
+.. py:function:: dense(inputs, units, activation='linear', kernel_initializer='he_normal', l2_scale=0, l1_scale=0, **kwargs)
+
+
+.. py:function:: average_pooling(inputs, pool_size=2, **kwargs)
+
+
+.. py:function:: average_to_2d(inputs, **kwargs)
+
+
+.. py:function:: max_to_2d(inputs, **kwargs)
+
+
+.. py:function:: dot_to_2d(inputs, **kwargs)
+
+
+.. py:function:: geodot_to_2d(inputs, **kwargs)
+
+
+.. py:function:: concat_to_2d(inputs, **kwargs)
+
+
+.. py:data:: name_func
+
+   
+
+.. py:data:: keras_func
+
+   
+

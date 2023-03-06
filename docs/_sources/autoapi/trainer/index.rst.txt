@@ -1,0 +1,197 @@
+:py:mod:`trainer`
+=================
+
+.. py:module:: trainer
+
+.. autoapi-nested-parse::
+
+   SeqNN trainer
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   trainer.Trainer
+   trainer.EarlyStoppingMin
+   trainer.Cyclical1LearningRate
+   trainer.WarmUp
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   trainer.parse_loss
+   trainer.compute_norm
+   trainer.unitwise_norm
+   trainer.adaptive_clip_grad
+   trainer.safe_next
+
+
+
+.. py:function:: parse_loss(loss_label, strategy=None, keras_fit=True, spec_weight=1, total_weight=1)
+
+   Select loss function,(MeanSquaredError, BinaryCrossEntrupy, or Poisson) with various options based on entry.
+   Possible selectable of loss functions from https://www.tensorflow.org/api_docs/python/tf/keras/losses/
+
+
+   Args:
+       loss_label (:obj:`str`):
+           string indicating chosen loss function.
+       strategy (:obj:`var`):
+           Determines whether reduction parameter (https://www.tensorflow.org/api_docs/python/tf/keras/losses/Reduction) is applied.
+       keras_fit (:obj:`bool`):
+           Secondary boolean parameter Determining whether reduction parameter is applied (see strategy above)
+       spec_weight (:obj:`int`, `optional`, defaults to 1):
+           term for functions without reduction parameter applied
+       total_weight (:obj:`str`, `optional`):
+           term for Poisson Multinomial function
+   Returns:
+       loss_fn (:obj:`function`):
+           Selected loss function for classes
+
+
+
+.. py:class:: Trainer(params, train_data, eval_data, out_dir, strategy=None, num_gpu=1, keras_fit=True)
+
+   assigning training settings/input variables to class specific local variables
+
+   .. py:method:: compile(seqnn_model)
+
+      This creates a diagnostic  ability curve to the input data. If BinaryCrossEntropy, ROC/PR curve is used
+      If more than this takes place, a pearsons correlation is run on the regression, This is used to create the 
+      loss function
+
+      Args:
+          self (:obj:`class`):
+              variables and settings associated with self trainer initialization
+          seqnn_model (:obj:`class`):
+              
+
+
+
+   .. py:method:: fit_keras(seqnn_model)
+
+      Parses genomes and reads to create and fit models, using the keras architecture
+
+      Args:
+          self (:obj:`class`):
+              variables and settings associated with self trainer initialization
+          seqnn_model (:obj:`class`):
+
+
+
+   .. py:method:: fit2(seqnn_model, unit_test_bool=False)
+
+      Is used to parse mouse and human genomes to create a single model, comparing the fits against each other
+
+      Args:
+          self (:obj:`class`):
+              variables and settings associated with self trainer initialization
+          seqnn_model (:obj:`class`):
+
+
+
+   .. py:method:: fit_tape(seqnn_model, unit_test_bool=False)
+
+      Similar to fit2 in structure and function, except uses one tape model.  
+      Strategy refers to gpu usage, where none == 1 gpu
+
+      Args:
+          self (:obj:`class`):
+              variables and settings associated with self trainer initialization
+          seqnn_model (:obj:`class`):
+
+
+   .. py:method:: make_optimizer()
+
+      accepts parameters defining optimization strategy, choosing algorithm, (stochastic grad descent, or others)
+      Start learning rate small and incriment as time goes on, step size is constant until final steps where it drops.
+
+      Args:
+          self (:obj:`class`):
+              variables and settings associated with self trainer initialization
+
+
+
+
+.. py:function:: compute_norm(x, axis, keepdims)
+
+   Computes euclidean norm 
+
+
+.. py:function:: unitwise_norm(x)
+
+   #runs previous compute_norm while parsing different cases. 
+
+
+.. py:function:: adaptive_clip_grad(parameters, gradients, clip_factor=0.1, eps=0.001)
+
+   edits gradient descent based on given parameters.  
+
+
+.. py:class:: EarlyStoppingMin(min_epoch=0, **kwargs)
+
+   Bases: :py:obj:`tensorflow.keras.callbacks.EarlyStopping`
+
+   Stop training when a monitored quantity has stopped improving.
+
+   Arguments:
+       min_epoch: Minimum number of epochs before considering stopping.
+       
+
+   .. py:method:: on_epoch_end(epoch, logs=None)
+
+
+
+.. py:class:: Cyclical1LearningRate(initial_learning_rate, maximal_learning_rate, final_learning_rate, step_size, name: str = 'Cyclical1LearningRate')
+
+   Bases: :py:obj:`tensorflow.keras.optimizers.schedules.LearningRateSchedule`
+
+   A LearningRateSchedule that uses cyclical schedule.
+   https://yashuseth.blog/2018/11/26/hyper-parameter-tuning-best-practices-learning-rate-batch-size-momentum-weight-decay/
+
+   .. py:method:: __call__(step)
+
+
+   .. py:method:: get_config()
+
+
+
+.. py:class:: WarmUp(initial_learning_rate: float, warmup_steps: int, decay_schedule: None, power: float = 1.0, name: str = None)
+
+   Bases: :py:obj:`tensorflow.keras.optimizers.schedules.LearningRateSchedule`
+
+   Applies a warmup schedule on a given learning rate decay schedule.
+   (h/t HuggingFace.)
+   Args:
+       initial_learning_rate (:obj:`float`):
+           The initial learning rate for the schedule after the warmup (so this will be the learning rate at the end
+           of the warmup).
+       decay_schedule (:obj:`Callable`):
+           The learning rate or schedule function to apply after the warmup for the rest of training.
+       warmup_steps (:obj:`int`):
+           The number of steps for the warmup part of training.
+       power (:obj:`float`, `optional`, defaults to 1):
+           The power to use for the polynomial warmup (defaults is a linear warmup).
+       name (:obj:`str`, `optional`):
+           Optional name prefix for the returned tensors during the schedule.
+
+   .. py:method:: __call__(step)
+
+
+   .. py:method:: get_config()
+
+
+
+.. py:function:: safe_next(data_iter, retry=5, sleep=10)
+
+
