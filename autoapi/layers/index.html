@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>layers &#8212; Baskerville 0.01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-layers">
+<span id="layers"></span><h1><a class="reference internal" href="#module-layers" title="layers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">layers</span></code></a><a class="headerlink" href="#module-layers" title="Permalink to this heading">¶</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.Clip" title="layers.Clip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Clip</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.Exp" title="layers.Exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Exp</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.Scale" title="layers.Scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scale</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.PolyReLU" title="layers.PolyReLU"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PolyReLU</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.Softplus" title="layers.Softplus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Softplus</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.CenterSlice" title="layers.CenterSlice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CenterSlice</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.CenterAverage" title="layers.CenterAverage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CenterAverage</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.LengthAverage" title="layers.LengthAverage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LengthAverage</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.MultiheadAttention" title="layers.MultiheadAttention"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiheadAttention</span></code></a></p></td>
+<td><p>Multi-head attention.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.WheezeExcite" title="layers.WheezeExcite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WheezeExcite</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.SqueezeExcite" title="layers.SqueezeExcite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SqueezeExcite</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.GlobalContext" title="layers.GlobalContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GlobalContext</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.SoftmaxPool1D" title="layers.SoftmaxPool1D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SoftmaxPool1D</span></code></a></p></td>
+<td><p>Pooling operation with optional weights.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.ConcatPosition" title="layers.ConcatPosition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcatPosition</span></code></a></p></td>
+<td><p>Concatenate position to 1d feature vectors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.OneToTwo" title="layers.OneToTwo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OneToTwo</span></code></a></p></td>
+<td><p>Transform 1d to 2d with i,j vectors operated on.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.AverageTo2D" title="layers.AverageTo2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AverageTo2D</span></code></a></p></td>
+<td><p>Transform 1d to 2d with i,j vectors averaged.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.MaxTo2D" title="layers.MaxTo2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaxTo2D</span></code></a></p></td>
+<td><p>Transform 1d to 2d with i,j vectors maxed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.DotTo2D" title="layers.DotTo2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DotTo2D</span></code></a></p></td>
+<td><p>Transform 1d to 2d with i,j vectors maxed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.GeoDotTo2D" title="layers.GeoDotTo2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeoDotTo2D</span></code></a></p></td>
+<td><p>Transform 1d to 2d with i,j vectors maxed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.ConcatTo2D" title="layers.ConcatTo2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcatTo2D</span></code></a></p></td>
+<td><p>Transform 1d to 2d with i,j vectors concatenated.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.ConcatDist2D" title="layers.ConcatDist2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConcatDist2D</span></code></a></p></td>
+<td><p>Concatenate the pairwise distance to 2d feature matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.UpperTri" title="layers.UpperTri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UpperTri</span></code></a></p></td>
+<td><p>Unroll matrix to its upper triangular portion.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.Symmetrize2D" title="layers.Symmetrize2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Symmetrize2D</span></code></a></p></td>
+<td><p>Take the average of a matrix and its transpose to enforce symmetry.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.EnsembleReverseComplement" title="layers.EnsembleReverseComplement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnsembleReverseComplement</span></code></a></p></td>
+<td><p>Expand tensor to include reverse complement of one hot encoded DNA sequence.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.StochasticReverseComplement" title="layers.StochasticReverseComplement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StochasticReverseComplement</span></code></a></p></td>
+<td><p>Stochastically reverse complement a one hot encoded DNA sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.SwitchReverse" title="layers.SwitchReverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SwitchReverse</span></code></a></p></td>
+<td><p>Reverse predictions if the inputs were reverse complemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.SwitchReverseTriu" title="layers.SwitchReverseTriu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SwitchReverseTriu</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.EnsembleShift" title="layers.EnsembleShift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnsembleShift</span></code></a></p></td>
+<td><p>Expand tensor to include shifts of one hot encoded DNA sequence.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.StochasticShift" title="layers.StochasticShift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StochasticShift</span></code></a></p></td>
+<td><p>Stochastically shift a one hot encoded DNA sequence.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.FactorInverse" title="layers.FactorInverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FactorInverse</span></code></a></p></td>
+<td><p>Inverse a target matrix factorization.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.rope" title="layers.rope"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rope</span></code></a>(x, axis)</p></td>
+<td><p>RoPE position embedding.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers._prepend_dims" title="layers._prepend_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_prepend_dims</span></code></a>(x, num_dims)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.positional_features_central_mask" title="layers.positional_features_central_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">positional_features_central_mask</span></code></a>(positions, ...)</p></td>
+<td><p>Positional features using a central mask (allow only central features).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.gamma_pdf" title="layers.gamma_pdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma_pdf</span></code></a>(x, concentration, rate)</p></td>
+<td><p>Gamma probability distribution function: p(x|concentration, rate).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.positional_features_gamma" title="layers.positional_features_gamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">positional_features_gamma</span></code></a>(positions, feature_size[, ...])</p></td>
+<td><p>Positional features computed using the gamma distributions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.get_positional_feature_function" title="layers.get_positional_feature_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_positional_feature_function</span></code></a>(name)</p></td>
+<td><p>Returns positional feature functions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.positional_features_all" title="layers.positional_features_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">positional_features_all</span></code></a>(positions, feature_size[, ...])</p></td>
+<td><p>Compute relative positional encodings/features.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.positional_features" title="layers.positional_features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">positional_features</span></code></a>(positions, feature_size, seq_length)</p></td>
+<td><p>Compute relative positional encodings/features.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.relative_shift" title="layers.relative_shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relative_shift</span></code></a>(x)</p></td>
+<td><p>Shift the relative logits like in TransformerXL.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#layers.shift_sequence" title="layers.shift_sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift_sequence</span></code></a>(seq, shift[, pad_value])</p></td>
+<td><p>Shift a sequence left or right by shift_amount.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#layers.activate" title="layers.activate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">activate</span></code></a>(current, activation[, verbose])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.Clip">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">Clip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Clip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Clip.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Clip.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Clip.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.Clip.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.Exp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">Exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Exp.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Exp.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Exp.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.Exp.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.Scale">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">Scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zeros'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Scale.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Scale.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Scale.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Scale.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Scale.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.Scale.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.PolyReLU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">PolyReLU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.PolyReLU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.PolyReLU.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.PolyReLU.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.Softplus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">Softplus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Softplus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Softplus.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Softplus.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Softplus.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.Softplus.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.CenterSlice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">CenterSlice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.CenterSlice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.CenterSlice.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.CenterSlice.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.CenterSlice.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.CenterSlice.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.CenterAverage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">CenterAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.CenterAverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.CenterAverage.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.CenterAverage.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.CenterAverage.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.CenterAverage.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.LengthAverage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">LengthAverage</span></span><a class="headerlink" href="#layers.LengthAverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.LengthAverage.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.LengthAverage.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.rope">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">rope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.rope" title="Permalink to this definition">¶</a></dt>
+<dd><p>RoPE position embedding.
+From Hua et al. Transformer Quality in Linear Time.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers._prepend_dims">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">_prepend_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_dims</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers._prepend_dims" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.positional_features_central_mask">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">positional_features_central_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tensorflow.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.positional_features_central_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Positional features using a central mask (allow only central features).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.gamma_pdf">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">gamma_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concentration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.gamma_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gamma probability distribution function: p(x|concentration, rate).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.positional_features_gamma">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">positional_features_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tensorflow.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stddev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.positional_features_gamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Positional features computed using the gamma distributions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.get_positional_feature_function">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">get_positional_feature_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.get_positional_feature_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns positional feature functions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.positional_features_all">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">positional_features_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tensorflow.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_functions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.positional_features_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute relative positional encodings/features.</p>
+<p>Each positional feature function will compute/provide the same fraction of
+features, making up the total of feature_size.</p>
+<dl>
+<dt>Args:</dt><dd><p>positions: Tensor of relative positions of arbitrary shape.
+feature_size: Total number of basis functions.
+seq_length: Sequence length denoting the characteristic length that</p>
+<blockquote>
+<div><p>the individual positional features can use. This is required since the
+parametrization of the input features should be independent of <cite>positions</cite>
+while it could still require to use the total number of features.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>bin_size: Bin sized used to partition the sequence. This can be used to</dt><dd><p>compute features on the absolute scale relative to the genome.</p>
+</dd>
+<dt>feature_functions: List of different feature functions to use. Each function</dt><dd><p>will take as argument: positions, sequence length and number of features
+to compute.</p>
+</dd>
+<dt>symmetric: If True, the resulting features will be symmetric across the</dt><dd><p>relative position of 0 (i.e. only absolute value of positions will
+matter). If false, then both the symmetric and asymmetric version
+(symmetric multiplied by sign(positions)) of the features will be used.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Tensor of shape: <cite>positions.shape + (feature_size,)</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.positional_features">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">positional_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">positions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tensorflow.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.positional_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute relative positional encodings/features.</p>
+<p>Each positional feature function will compute/provide the same fraction of
+features, making up the total of feature_size.</p>
+<dl>
+<dt>Args:</dt><dd><p>positions: Tensor of relative positions of arbitrary shape.
+feature_size: Total number of basis functions.
+seq_length: Sequence length denoting the characteristic length that</p>
+<blockquote>
+<div><p>the individual positional features can use. This is required since the
+parametrization of the input features should be independent of <cite>positions</cite>
+while it could still require to use the total number of features.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>symmetric: If True, the resulting features will be symmetric across the</dt><dd><p>relative position of 0 (i.e. only absolute value of positions will
+matter). If false, then both the symmetric and asymmetric version
+(symmetric multiplied by sign(positions)) of the features will be used.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Tensor of shape: <cite>positions.shape + (feature_size,)</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.relative_shift">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">relative_shift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.relative_shift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the relative logits like in TransformerXL.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.MultiheadAttention">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">MultiheadAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attention_dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_position_symmetric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_position_functions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['positional_features_central_mask']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_position_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">positional_dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_position_bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_initialize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transpose_stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initializer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'he_normal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qkv_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.MultiheadAttention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Multi-head attention.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.MultiheadAttention._multihead_output">
+<span class="sig-name descname"><span class="pre">_multihead_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">linear_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.MultiheadAttention._multihead_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a standard linear to inputs and returns multihead output.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.MultiheadAttention.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.MultiheadAttention.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.MultiheadAttention.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.MultiheadAttention.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.WheezeExcite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">WheezeExcite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.WheezeExcite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.WheezeExcite.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.WheezeExcite.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.WheezeExcite.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.WheezeExcite.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.WheezeExcite.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.WheezeExcite.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.SqueezeExcite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">SqueezeExcite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottleneck_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SqueezeExcite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SqueezeExcite.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SqueezeExcite.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SqueezeExcite.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SqueezeExcite.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SqueezeExcite.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.SqueezeExcite.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.GlobalContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">GlobalContext</span></span><a class="headerlink" href="#layers.GlobalContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.GlobalContext.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.GlobalContext.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.GlobalContext.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.GlobalContext.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.SoftmaxPool1D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">SoftmaxPool1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_gain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SoftmaxPool1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Pooling operation with optional weights.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SoftmaxPool1D.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SoftmaxPool1D.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SoftmaxPool1D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SoftmaxPool1D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SoftmaxPool1D.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.SoftmaxPool1D.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.ConcatPosition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">ConcatPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.ConcatPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Concatenate position to 1d feature vectors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.ConcatPosition.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.ConcatPosition.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.ConcatPosition.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.ConcatPosition.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.OneToTwo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">OneToTwo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.OneToTwo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Transform 1d to 2d with i,j vectors operated on.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.OneToTwo.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oned</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.OneToTwo.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.OneToTwo.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.OneToTwo.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.AverageTo2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">AverageTo2D</span></span><a class="headerlink" href="#layers.AverageTo2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Transform 1d to 2d with i,j vectors averaged.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.AverageTo2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.AverageTo2D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.MaxTo2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">MaxTo2D</span></span><a class="headerlink" href="#layers.MaxTo2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Transform 1d to 2d with i,j vectors maxed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.MaxTo2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.MaxTo2D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.DotTo2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">DotTo2D</span></span><a class="headerlink" href="#layers.DotTo2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Transform 1d to 2d with i,j vectors maxed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.DotTo2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.DotTo2D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.GeoDotTo2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">GeoDotTo2D</span></span><a class="headerlink" href="#layers.GeoDotTo2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Transform 1d to 2d with i,j vectors maxed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.GeoDotTo2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.GeoDotTo2D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.ConcatTo2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">ConcatTo2D</span></span><a class="headerlink" href="#layers.ConcatTo2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Transform 1d to 2d with i,j vectors concatenated.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.ConcatTo2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.ConcatTo2D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.ConcatDist2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">ConcatDist2D</span></span><a class="headerlink" href="#layers.ConcatDist2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Concatenate the pairwise distance to 2d feature matrix.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.ConcatDist2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.ConcatDist2D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.UpperTri">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">UpperTri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diagonal_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.UpperTri" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Unroll matrix to its upper triangular portion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.UpperTri.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.UpperTri.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.UpperTri.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.UpperTri.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.Symmetrize2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">Symmetrize2D</span></span><a class="headerlink" href="#layers.Symmetrize2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Take the average of a matrix and its transpose to enforce symmetry.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.Symmetrize2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.Symmetrize2D.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.EnsembleReverseComplement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">EnsembleReverseComplement</span></span><a class="headerlink" href="#layers.EnsembleReverseComplement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Expand tensor to include reverse complement of one hot encoded DNA sequence.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.EnsembleReverseComplement.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seqs_1hot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.EnsembleReverseComplement.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.StochasticReverseComplement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">StochasticReverseComplement</span></span><a class="headerlink" href="#layers.StochasticReverseComplement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Stochastically reverse complement a one hot encoded DNA sequence.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.StochasticReverseComplement.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq_1hot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.StochasticReverseComplement.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.SwitchReverse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">SwitchReverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strand_pair</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SwitchReverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Reverse predictions if the inputs were reverse complemented.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SwitchReverse.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_reverse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SwitchReverse.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SwitchReverse.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.SwitchReverse.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.SwitchReverseTriu">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">SwitchReverseTriu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diagonal_offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SwitchReverseTriu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SwitchReverseTriu.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_reverse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.SwitchReverseTriu.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.SwitchReverseTriu.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.SwitchReverseTriu.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.EnsembleShift">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">EnsembleShift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shifts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.EnsembleShift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Expand tensor to include shifts of one hot encoded DNA sequence.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.EnsembleShift.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seqs_1hot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.EnsembleShift.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.EnsembleShift.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.EnsembleShift.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.StochasticShift">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">StochasticShift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shift_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symmetric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.StochasticShift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Stochastically shift a one hot encoded DNA sequence.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.StochasticShift.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq_1hot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.StochasticShift.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.StochasticShift.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.StochasticShift.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.shift_sequence">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">shift_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.shift_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift a sequence left or right by shift_amount.</p>
+<p>Args:
+seq: [batch_size, seq_length, seq_depth] sequence
+shift: signed shift value (tf.int32 or int)
+pad_value: value to fill the padding (primitive or scalar tf.Tensor)</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="layers.FactorInverse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">FactorInverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components_npy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.FactorInverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorflow.keras.layers.Layer</span></code></p>
+<p>Inverse a target matrix factorization.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.FactorInverse.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.FactorInverse.call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="layers.FactorInverse.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#layers.FactorInverse.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="layers.activate">
+<span class="sig-prename descclassname"><span class="pre">layers.</span></span><span class="sig-name descname"><span class="pre">activate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#layers.activate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Baskerville</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, David Kelley, Gunalan Natesan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/autoapi/layers/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

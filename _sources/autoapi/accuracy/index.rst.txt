@@ -1,0 +1,37 @@
+:py:mod:`accuracy`
+==================
+
+.. py:module:: accuracy
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   accuracy.Accuracy
+
+
+
+
+.. py:class:: Accuracy(targets, preds, targets_na=None, loss=None, target_losses=None)
+
+   .. py:method:: pearsonr(log=False, pseudocount=1, clip=None)
+
+      Compute target PearsonR vector. 
+
+
+   .. py:method:: r2(log=False, pseudocount=1, clip=None)
+
+      Compute target R2 vector. 
+
+
+   .. py:method:: spearmanr()
+
+      Compute target SpearmanR vector. 
+
+
+
